@@ -1,0 +1,19 @@
+.btn {
+  height: 48px;
+  border-radius: 4px;
+  color: $white;
+  font-family: "AvenirBold";
+  background-color: $blue;
+  border: none;
+
+  &:hover {
+    background-color: $darkblue;
+  }
+}
+
+.input {
+  border: 1px solid $mercury;
+  height: 48px;
+  border-radius: 4px;
+  padding: 8px;
+}

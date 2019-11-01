@@ -31,6 +31,7 @@
       &-input-text {
         width: 70vw;
         height: 30vw;
+        resize: none;
       }
       &-btn {
         width: 70vw;
@@ -132,7 +133,7 @@
   }
 }
 
-@include huge {
+@include large {
   .comments {
     width: 61.94vw;
 

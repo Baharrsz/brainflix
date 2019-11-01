@@ -1,6 +1,12 @@
 .video {
   width: 100vw;
   height: 57.19vw;
+  background-color: black;
+  text-align: center;
+
+  &__player {
+    width: 100%;
+  }
 }
 .contents {
   padding: 0 5vw;
@@ -49,6 +55,14 @@
 }
 
 @include medium {
+  .video {
+    height: 52.08vw;
+
+    &__player {
+      width: 91.15%;
+    }
+  }
+
   .contents {
     padding: 0 3.12vw;
   }
@@ -79,7 +93,15 @@
   }
 }
 
-@include huge {
+@include large {
+  .video {
+    height: 37.5vw;
+
+    &__player {
+      width: 65.56%;
+    }
+  }
+
   .contents {
     padding: 0 12.5vw;
     display: flex;

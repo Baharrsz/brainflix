@@ -1,0 +1,58 @@
+.side {
+  padding-top: 40px;
+
+  &__list {
+    margin-top: 40px;
+
+    &-item {
+      margin-bottom: 24px;
+      display: flex;
+      height: 70px;
+
+      &-poster {
+        width: 120px;
+        height: 70px;
+        border-radius: 4px;
+        margin-right: 16px;
+      }
+
+      &-title {
+        font-family: "AvenirDemiBold";
+        margin-bottom: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+    }
+  }
+}
+
+@include medium {
+  .side {
+    &__list {
+      &-item {
+        width: 45.31vw;
+
+        &-title {
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+}
+
+@include large {
+  .side {
+    &__list {
+      &-item {
+        width: 23.89vw;
+
+        &-title {
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+}

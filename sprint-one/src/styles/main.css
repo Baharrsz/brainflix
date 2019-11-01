@@ -108,7 +108,7 @@ label,
   }
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1024px) {
   h1 {
     font-size: 36px;
     line-height: 44px;
@@ -216,6 +216,7 @@ label,
 .comments__new-section-input-text {
   width: 70vw;
   height: 30vw;
+  resize: none;
 }
 
 .comments__new-section-btn {
@@ -320,7 +321,7 @@ label,
   }
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1024px) {
   .comments {
     width: 61.94vw;
   }
@@ -466,7 +467,7 @@ label,
   }
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1024px) {
   .header {
     height: 80px;
     -webkit-box-orient: horizontal;
@@ -507,6 +508,12 @@ label,
 .video {
   width: 100vw;
   height: 57.19vw;
+  background-color: black;
+  text-align: center;
+}
+
+.video__player {
+  width: 100%;
 }
 
 .contents {
@@ -559,6 +566,12 @@ label,
 }
 
 @media only screen and (min-width: 768px) {
+  .video {
+    height: 52.08vw;
+  }
+  .video__player {
+    width: 91.15%;
+  }
   .contents {
     padding: 0 3.12vw;
   }
@@ -587,7 +600,13 @@ label,
   }
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1024px) {
+  .video {
+    height: 37.5vw;
+  }
+  .video__player {
+    width: 65.56%;
+  }
   .contents {
     padding: 0 12.5vw;
     display: -webkit-box;
@@ -650,6 +669,7 @@ label,
 .comments__new-section-input-text {
   width: 70vw;
   height: 30vw;
+  resize: none;
 }
 
 .comments__new-section-btn {
@@ -754,7 +774,7 @@ label,
   }
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1024px) {
   .comments {
     width: 61.94vw;
   }
@@ -801,6 +821,57 @@ label,
   }
   .comments__past-commentbox-body-head-name {
     margin-right: 3.12vw;
+  }
+}
+
+.side {
+  padding-top: 40px;
+}
+
+.side__list {
+  margin-top: 40px;
+}
+
+.side__list-item {
+  margin-bottom: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 70px;
+}
+
+.side__list-item-poster {
+  width: 120px;
+  height: 70px;
+  border-radius: 4px;
+  margin-right: 16px;
+}
+
+.side__list-item-title {
+  font-family: "AvenirDemiBold";
+  margin-bottom: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+@media only screen and (min-width: 768px) {
+  .side__list-item {
+    width: 45.31vw;
+  }
+  .side__list-item-title {
+    margin-bottom: 8px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .side__list-item {
+    width: 23.89vw;
+  }
+  .side__list-item-title {
+    margin-bottom: 8px;
   }
 }
 

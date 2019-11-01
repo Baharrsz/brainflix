@@ -1,29 +1,28 @@
 import React from "react";
 import Comments from "./Comments";
 import Description from "./Description";
-import video from "../assets/video/BrainStation Sample Video.mp4";
-import poster from "../assets/images/video-list-0.jpg";
 import Side from "./Side";
 
-export default function MainContent() {
+export default function MainContent(props) {
   return (
     <main>
-      <video
-        className="video"
-        src={video}
-        controls
-        width="320"
-        height="240"
-        poster={poster}
-      ></video>
+      <div className="video">
+        <video
+          className="video__player"
+          src={props.mainVideo.video}
+          controls
+          poster={props.mainVideo.image}
+        ></video>
+      </div>
+
       <div className="contents">
         <div className="contents__left">
-          <Description />
-          <Comments />
+          <Description mainVideo={props.mainVideo} />
+          <Comments commentsArray={props.mainVideo.comments} />
         </div>
 
         <div className="contents__right">
-          <Side />
+          <Side videosArray={props.sideArray} />
         </div>
       </div>
     </main>

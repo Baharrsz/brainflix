@@ -66,7 +66,7 @@ function SingleComment(props) {
     <div className="comments__past-commentbox">
       <div className="comments__past-commentbox-avatarbox">
         <img
-          className="comments__past-avatar"
+          className="comments__past-commentbox-avatar"
           alt="avatar"
           src={props.info.avatar}
           width="40"
@@ -94,7 +94,8 @@ function PastComments(props) {
   let elementsArray = props.info.map(comment => {
     return <SingleComment info={comment} key={uniqid()} />;
   });
-  return elementsArray;
+
+  return <div className="comments__past">{elementsArray}</div>;
 }
 
 class Comments extends React.Component {

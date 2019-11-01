@@ -1,8 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .comments {
+  margin: 0 auto;
+  width: 90vw;
+
   &__count {
+    font-family: "AvenirDemiBold";
+    margin-bottom: 32px;
   }
+
   &__new {
+    display: flex;
+    width: 90vw;
+
+    &-avatarbox {
+      width: 48px;
+    }
+    &-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      margin-top: 16px;
+    }
+    &-section {
+      margin-left: 5vw;
+
+      &-input-text {
+        width: 70vw;
+        height: 30vw;
+      }
+      &-btn {
+        width: 70vw;
+        margin: 16px 0 24px 0;
+      }
+    }
   }
+
   &__past {
+    &-commentbox {
+      display: flex;
+      padding: 24px 0;
+      border-top: 0.5px solid $mercury;
+      border-bottom: 0.5px solid $mercury;
+
+      &-avatarbox {
+        width: 48px;
+      }
+      &-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+      }
+
+      &-body {
+        width: 70vw;
+        margin-left: 16px;
+
+        &-head {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 16px;
+          width: 100%;
+
+          &-name {
+            font-family: "AvenirDemiBold";
+          }
+          &-date {
+            color: $silver;
+          }
+        }
+
+        &-text {
+          overflow-wrap: break-word;
+        }
+      }
+    }
+  }
+}
+
+@include medium {
+  .comments {
+    width: 93.75vw;
+
+    &__new {
+      display: flex;
+      width: 93.75vw;
+      margin-bottom: 24px;
+
+      &-avatar {
+        margin-top: 16px;
+      }
+      &-section {
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 2.08vw;
+        align-items: center;
+
+        &-input {
+          width: 57.29vw;
+
+          &-text {
+            width: 57.29vw;
+            height: 48px;
+          }
+        }
+        &-btn {
+          width: 20.83vw;
+          margin: 16px 5.21vw 0 2.08vw;
+        }
+      }
+    }
+
+    &__past {
+      &-commentbox {
+        &-body {
+          width: 81.25vw;
+
+          &-head {
+            justify-content: flex-start;
+
+            &-name {
+              margin-right: 3.12vw;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include huge {
+  .comments {
+    width: 61.94vw;
+
+    &__past {
+      &-commentbox {
+        width: 49.44vw;
+
+        &-body {
+          &-head {
+            justify-content: flex-start;
+
+            &-name {
+              margin-right: 3.12vw;
+            }
+          }
+        }
+      }
+    }
   }
 }

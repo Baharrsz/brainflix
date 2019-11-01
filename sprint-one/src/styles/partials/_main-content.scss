@@ -7,14 +7,14 @@
 }
 
 .description {
-  border-bottom: 1px solid $mercury;
-
   &__title {
     font-family: "AvenirBold";
     margin: 32px 0 16px 0;
   }
 
   &__head {
+    border-bottom: 1px solid $mercury;
+
     &-author {
       display: flex;
       margin-bottom: 32px;
@@ -31,7 +31,7 @@
 
     &-stats {
       display: flex;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
 
       &-views-icon {
         margin-right: 8px;
@@ -54,8 +54,6 @@
   }
 
   .description {
-    border: none;
-
     &__title {
       margin: 48px 0 24px 0;
     }

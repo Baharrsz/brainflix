@@ -176,6 +176,167 @@ label,
   padding: 8px;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.comments {
+  margin: 0 auto;
+  width: 90vw;
+}
+
+.comments__count {
+  font-family: "AvenirDemiBold";
+  margin-bottom: 32px;
+}
+
+.comments__new {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90vw;
+}
+
+.comments__new-avatarbox {
+  width: 48px;
+}
+
+.comments__new-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-top: 16px;
+}
+
+.comments__new-section {
+  margin-left: 5vw;
+}
+
+.comments__new-section-input-text {
+  width: 70vw;
+  height: 30vw;
+}
+
+.comments__new-section-btn {
+  width: 70vw;
+  margin: 16px 0 24px 0;
+}
+
+.comments__past-commentbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 24px 0;
+  border-top: 0.5px solid #e1e1e1;
+  border-bottom: 0.5px solid #e1e1e1;
+}
+
+.comments__past-commentbox-avatarbox {
+  width: 48px;
+}
+
+.comments__past-commentbox-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.comments__past-commentbox-body {
+  width: 70vw;
+  margin-left: 16px;
+}
+
+.comments__past-commentbox-body-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.comments__past-commentbox-body-head-name {
+  font-family: "AvenirDemiBold";
+}
+
+.comments__past-commentbox-body-head-date {
+  color: #afafaf;
+}
+
+.comments__past-commentbox-body-text {
+  overflow-wrap: break-word;
+}
+
+@media only screen and (min-width: 768px) {
+  .comments {
+    width: 93.75vw;
+  }
+  .comments__new {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 93.75vw;
+    margin-bottom: 24px;
+  }
+  .comments__new-avatar {
+    margin-top: 16px;
+  }
+  .comments__new-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-left: 2.08vw;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .comments__new-section-input {
+    width: 57.29vw;
+  }
+  .comments__new-section-input-text {
+    width: 57.29vw;
+    height: 48px;
+  }
+  .comments__new-section-btn {
+    width: 20.83vw;
+    margin: 16px 5.21vw 0 2.08vw;
+  }
+  .comments__past-commentbox-body {
+    width: 81.25vw;
+  }
+  .comments__past-commentbox-body-head {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .comments__past-commentbox-body-head-name {
+    margin-right: 3.12vw;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .comments {
+    width: 61.94vw;
+  }
+  .comments__past-commentbox {
+    width: 49.44vw;
+  }
+  .comments__past-commentbox-body-head {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .comments__past-commentbox-body-head-name {
+    margin-right: 3.12vw;
+  }
+}
+
 .header {
   width: 100vw;
   display: -webkit-box;
@@ -319,13 +480,13 @@ label,
   padding: 0 5vw;
 }
 
-.description {
-  border-bottom: 1px solid #e1e1e1;
-}
-
 .description__title {
   font-family: "AvenirBold";
   margin: 32px 0 16px 0;
+}
+
+.description__head {
+  border-bottom: 1px solid #e1e1e1;
 }
 
 .description__head-author {
@@ -348,7 +509,7 @@ label,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .description__head-stats-views-icon {
@@ -367,9 +528,6 @@ label,
 @media only screen and (min-width: 768px) {
   .contents {
     padding: 0 3.12vw;
-  }
-  .description {
-    border: none;
   }
   .description__title {
     margin: 48px 0 24px 0;
@@ -416,6 +574,167 @@ label,
   }
   .description__text {
     width: 36.67vw;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.comments {
+  margin: 0 auto;
+  width: 90vw;
+}
+
+.comments__count {
+  font-family: "AvenirDemiBold";
+  margin-bottom: 32px;
+}
+
+.comments__new {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90vw;
+}
+
+.comments__new-avatarbox {
+  width: 48px;
+}
+
+.comments__new-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-top: 16px;
+}
+
+.comments__new-section {
+  margin-left: 5vw;
+}
+
+.comments__new-section-input-text {
+  width: 70vw;
+  height: 30vw;
+}
+
+.comments__new-section-btn {
+  width: 70vw;
+  margin: 16px 0 24px 0;
+}
+
+.comments__past-commentbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 24px 0;
+  border-top: 0.5px solid #e1e1e1;
+  border-bottom: 0.5px solid #e1e1e1;
+}
+
+.comments__past-commentbox-avatarbox {
+  width: 48px;
+}
+
+.comments__past-commentbox-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.comments__past-commentbox-body {
+  width: 70vw;
+  margin-left: 16px;
+}
+
+.comments__past-commentbox-body-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.comments__past-commentbox-body-head-name {
+  font-family: "AvenirDemiBold";
+}
+
+.comments__past-commentbox-body-head-date {
+  color: #afafaf;
+}
+
+.comments__past-commentbox-body-text {
+  overflow-wrap: break-word;
+}
+
+@media only screen and (min-width: 768px) {
+  .comments {
+    width: 93.75vw;
+  }
+  .comments__new {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 93.75vw;
+    margin-bottom: 24px;
+  }
+  .comments__new-avatar {
+    margin-top: 16px;
+  }
+  .comments__new-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-left: 2.08vw;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .comments__new-section-input {
+    width: 57.29vw;
+  }
+  .comments__new-section-input-text {
+    width: 57.29vw;
+    height: 48px;
+  }
+  .comments__new-section-btn {
+    width: 20.83vw;
+    margin: 16px 5.21vw 0 2.08vw;
+  }
+  .comments__past-commentbox-body {
+    width: 81.25vw;
+  }
+  .comments__past-commentbox-body-head {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .comments__past-commentbox-body-head-name {
+    margin-right: 3.12vw;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .comments {
+    width: 61.94vw;
+  }
+  .comments__past-commentbox {
+    width: 49.44vw;
+  }
+  .comments__past-commentbox-body-head {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .comments__past-commentbox-body-head-name {
+    margin-right: 3.12vw;
   }
 }
 

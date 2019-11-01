@@ -136,6 +136,35 @@
   .comments {
     width: 61.94vw;
 
+    &__new {
+      display: flex;
+      width: 93.75vw;
+      margin-bottom: 24px;
+
+      &-avatar {
+        margin-top: 16px;
+      }
+      &-section {
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 2.08vw;
+        align-items: center;
+
+        &-input {
+          width: 30.28vw;
+
+          &-text {
+            width: 30.28vw;
+            height: 48px;
+          }
+        }
+        &-btn {
+          width: 11.11vw;
+          margin: 16px 0 0 1.11vw;
+        }
+      }
+    }
+
     &__past {
       &-commentbox {
         width: 49.44vw;

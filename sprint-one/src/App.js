@@ -103,7 +103,7 @@ class App extends React.Component {
       <div className="App">
         <Header />
         <MainContent
-          mainVideo={this.state.mainVideo}
+          videoInfo={this.state.mainVideo}
           sideArray={this.state.sideArray}
         />
       </div>

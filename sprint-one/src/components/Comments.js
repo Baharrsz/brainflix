@@ -7,13 +7,7 @@ function NewComment() {
   return (
     <div className="comments__new">
       <div className="comments__new-avatarbox">
-        <img
-          className="comments__new-avatar"
-          alt="avatar"
-          src={avatar}
-          width="40"
-          height="40"
-        ></img>
+        <img className="comments__new-avatar" alt="avatar" src={avatar}></img>
       </div>
       <div className="comments__new-section">
         <div className="comments__new-section-input">
@@ -23,8 +17,6 @@ function NewComment() {
           <textarea
             className="comments__new-section-input-text input"
             placeholder="Write comment here"
-            rows="4"
-            cols="50"
           ></textarea>
         </div>
 
@@ -35,13 +27,14 @@ function NewComment() {
 }
 
 function SingleComment(props) {
+  let commentInfo = props.commentInfo;
   return (
     <div className="comments__past-commentbox">
       <div className="comments__past-commentbox-avatarbox">
         <img
           className="comments__past-commentbox-avatar"
           alt="avatar"
-          src={props.info.avatar}
+          src={commentInfo.avatar}
           width="40"
           height="40"
         ></img>
@@ -49,14 +42,14 @@ function SingleComment(props) {
       <div className="comments__past-commentbox-body">
         <div className="comments__past-commentbox-body-head">
           <div className="comments__past-commentbox-body-head-name">
-            {props.info.name}
+            {commentInfo.name}
           </div>
           <div className="comments__past-commentbox-body-head-date">
-            {props.info.date}
+            {commentInfo.date}
           </div>
         </div>
         <div className="comments__past-commentbox-body-text">
-          {props.info.comment}
+          {commentInfo.comment}
         </div>
       </div>
     </div>
@@ -64,8 +57,9 @@ function SingleComment(props) {
 }
 
 function PastComments(props) {
-  let elementsArray = props.info.map(comment => {
-    return <SingleComment info={comment} key={uniqid()} />;
+  let commentsArray = props.commentsArray;
+  let elementsArray = commentsArray.map(comment => {
+    return <SingleComment commentInfo={comment} key={uniqid()} />;
   });
 
   return <div className="comments__past">{elementsArray}</div>;
@@ -76,7 +70,7 @@ function Comments(props) {
     <div className="comments">
       <h2 className="comments__count">3 comments</h2>
       <NewComment />
-      <PastComments info={props.commentsArray} />
+      <PastComments commentsArray={props.commentsArray} />
     </div>
   );
 }

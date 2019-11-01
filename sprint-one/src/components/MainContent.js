@@ -4,25 +4,27 @@ import Description from "./Description";
 import Side from "./Side";
 
 export default function MainContent(props) {
+  let { videoInfo, sideArray } = props;
+
   return (
     <main>
       <div className="video">
         <video
           className="video__player"
-          src={props.mainVideo.video}
+          src={videoInfo.video}
+          poster={videoInfo.image}
           controls
-          poster={props.mainVideo.image}
         ></video>
       </div>
 
       <div className="contents">
         <div className="contents__left">
-          <Description mainVideo={props.mainVideo} />
-          <Comments commentsArray={props.mainVideo.comments} />
+          <Description info={videoInfo} />
+          <Comments commentsArray={videoInfo.comments} />
         </div>
 
         <div className="contents__right">
-          <Side videosArray={props.sideArray} />
+          <Side videosArray={sideArray} />
         </div>
       </div>
     </main>

@@ -3,6 +3,7 @@ import eye from "../assets/icons/SVG/Icon-views.svg";
 import heart from "../assets/icons/SVG/Icon-likes.svg";
 
 function Stats(props) {
+  let info = props.info;
   return (
     <div className="description__head-stats">
       <div className="description__head-stats-views">
@@ -12,7 +13,7 @@ function Stats(props) {
           alt="viewsIcon"
         ></img>
         <span className="description__head-stats-views-number">
-          {props.info.views}
+          {info.views}
         </span>
       </div>
       <div className="description__head-stats-likes">
@@ -22,7 +23,7 @@ function Stats(props) {
           alt="likesIcon"
         ></img>
         <span className="description__head-stats-likes-number">
-          {props.info.likes}
+          {info.likes}
         </span>
       </div>
     </div>
@@ -30,27 +31,25 @@ function Stats(props) {
 }
 
 function HeadRow(props) {
+  let info = props.info;
   return (
     <div className="description__head">
       <div className="description__head-author">
-        <div className="description__head-author-name">
-          By{props.info.channel}
-        </div>
-        <div className="description__head-author-date">
-          {props.info.timestamp}
-        </div>
+        <div className="description__head-author-name">By{info.channel}</div>
+        <div className="description__head-author-date">{info.timestamp}</div>
       </div>
-      <Stats info={props.info} />
+      <Stats info={info} />
     </div>
   );
 }
 
 function Description(props) {
+  let info = props.info;
   return (
     <div className="description">
-      <h1 className="description__title">{props.mainVideo.title}</h1>
-      <HeadRow info={props.mainVideo} />
-      <p className="description__text">{props.mainVideo.description}</p>
+      <h1 className="description__title">{info.title}</h1>
+      <HeadRow info={info} />
+      <p className="description__text">{info.description}</p>
     </div>
   );
 }

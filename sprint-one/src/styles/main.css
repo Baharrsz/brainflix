@@ -192,8 +192,6 @@ label,
 
 .header__logo {
   margin: 16px 0 8px 0;
-  width: 10vw;
-  height: 48px;
 }
 
 .header__user {
@@ -266,8 +264,8 @@ label,
   .header__user-container-btn {
     width: 15vw;
     margin: 16px 3.12vw 16px 0;
-    background-position: 10px 17px;
-    padding-right: 16px;
+    background-position: 7px 17px;
+    padding-right: 14px;
   }
   .header__user-container-avatar {
     margin: 16px 3.12vw 16px 0;
@@ -309,6 +307,115 @@ label,
   }
   .header__user-container-avatar {
     margin: 16px 12.5vw 16px 0;
+  }
+}
+
+.video {
+  width: 100vw;
+  height: 57.19vw;
+}
+
+.contents {
+  padding: 0 5vw;
+}
+
+.description {
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.description__title {
+  font-family: "AvenirBold";
+  margin: 32px 0 16px 0;
+}
+
+.description__head-author {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 32px;
+}
+
+.description__head-author-name {
+  font-family: "AvenirDemiBold";
+}
+
+.description__head-author-date {
+  margin-left: 2.5vw;
+  color: #afafaf;
+}
+
+.description__head-stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 32px;
+}
+
+.description__head-stats-views-icon {
+  margin-right: 8px;
+}
+
+.description__head-stats-likes-icon {
+  margin-right: 8px;
+  margin-left: 24px;
+}
+
+.description__text {
+  margin: 24px 0 40px 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .contents {
+    padding: 0 3.12vw;
+  }
+  .description {
+    border: none;
+  }
+  .description__title {
+    margin: 48px 0 24px 0;
+  }
+  .description__head {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e1e1e1;
+  }
+  .description__head-author {
+    margin: 0;
+  }
+  .description__head-stats {
+    margin: 0;
+  }
+  .description__text {
+    margin: 40px 0 64px 0;
+    border-bottom: none;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .contents {
+    padding: 0 12.5vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .contents__left {
+    width: 49.44vw;
+    margin-right: 1.67vw;
+  }
+  .contents__right {
+    width: 23.89vw;
+    margin-top: 40px;
+  }
+  .description__head-stats {
+    margin-right: 2.22vw;
+  }
+  .description__text {
+    width: 36.67vw;
   }
 }
 

@@ -1,0 +1,109 @@
+.video {
+  width: 100vw;
+  height: 57.19vw;
+}
+.contents {
+  padding: 0 5vw;
+}
+
+.description {
+  border-bottom: 1px solid $mercury;
+
+  &__title {
+    font-family: "AvenirBold";
+    margin: 32px 0 16px 0;
+  }
+
+  &__head {
+    &-author {
+      display: flex;
+      margin-bottom: 32px;
+
+      &-name {
+        font-family: "AvenirDemiBold";
+      }
+
+      &-date {
+        margin-left: 2.5vw;
+        color: $silver;
+      }
+    }
+
+    &-stats {
+      display: flex;
+      margin-bottom: 32px;
+
+      &-views-icon {
+        margin-right: 8px;
+      }
+      &-likes-icon {
+        margin-right: 8px;
+        margin-left: 24px;
+      }
+    }
+  }
+
+  &__text {
+    margin: 24px 0 40px 0;
+  }
+}
+
+@include medium {
+  .contents {
+    padding: 0 3.12vw;
+  }
+
+  .description {
+    border: none;
+
+    &__title {
+      margin: 48px 0 24px 0;
+    }
+
+    &__head {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 24px;
+      border-bottom: 1px solid $mercury;
+
+      &-author {
+        margin: 0;
+      }
+      &-stats {
+        margin: 0;
+      }
+    }
+
+    &__text {
+      margin: 40px 0 64px 0;
+      border-bottom: none;
+    }
+  }
+}
+
+@include huge {
+  .contents {
+    padding: 0 12.5vw;
+    display: flex;
+
+    &__left {
+      width: 49.44vw;
+      margin-right: 1.67vw;
+    }
+
+    &__right {
+      width: 23.89vw;
+      margin-top: 40px;
+    }
+  }
+
+  .description {
+    &__head-stats {
+      margin-right: 2.22vw;
+    }
+
+    &__text {
+      width: 36.67vw;
+    }
+  }
+}

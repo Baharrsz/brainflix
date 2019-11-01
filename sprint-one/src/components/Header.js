@@ -1,7 +1,6 @@
 import React from "react";
 import logo from "../assets/logo/Logo-brainflix.svg";
 import avatar from "../assets/images/Mohan-muruge.jpg";
-import upload from "../assets/icons/SVG/Icon-upload.svg";
 
 function Header() {
   return (

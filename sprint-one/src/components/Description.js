@@ -21,17 +21,17 @@ function Stats(props) {
           src={eye}
           alt="viewsIcon"
         ></img>
-        <span className="description__head-stats-views">
+        <span className="description__head-stats-views-number">
           {props.info.views}
         </span>
       </div>
       <div className="description__head-stats-likes">
         <img
-          className="description__head-stats-views-icon"
+          className="description__head-stats-likes-icon"
           src={heart}
           alt="likesIcon"
         ></img>
-        <span className="description__head-stats-views">
+        <span className="description__head-stats-likes-number">
           {props.info.likes}
         </span>
       </div>
@@ -44,11 +44,11 @@ function HeadRow(props) {
     <div className="description__head">
       <div className="description__head-author">
         <div className="description__head-author-name">
-          By {props.info.author}
+          By{props.info.author}
         </div>
         <div className="description__head-author-date">{props.info.date}</div>
-        <Stats info={props.info} />
       </div>
+      <Stats info={props.info} />
     </div>
   );
 }
@@ -59,7 +59,7 @@ class Description extends React.Component {
       <div className="description">
         <h1 className="description__title">{currentVideoInfo.title}</h1>
         <HeadRow info={currentVideoInfo} />
-        <div className="description__text">{currentVideoInfo.text}</div>
+        <p className="description__text">{currentVideoInfo.text}</p>
       </div>
     );
   }

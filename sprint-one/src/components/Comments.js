@@ -63,8 +63,8 @@ function NewComment() {
 
 function SingleComment(props) {
   return (
-    <div className="comments__past">
-      <div className="comments__past-avatarbox">
+    <div className="comments__past-commentbox">
+      <div className="comments__past-commentbox-avatarbox">
         <img
           className="comments__past-avatar"
           alt="avatar"
@@ -73,17 +73,19 @@ function SingleComment(props) {
           height="40"
         ></img>
       </div>
-      <div className="comments__past-section">
-        <div className="comments__past-section-head">
-          <div className="comments__past-section-head-name">
+      <div className="comments__past-commentbox-body">
+        <div className="comments__past-commentbox-body-head">
+          <div className="comments__past-commentbox-body-head-name">
             {props.info.name}
           </div>
+          <div className="comments__past-commentbox-body-head-date">
+            {props.info.date}
+          </div>
         </div>
-        <div className="comments__past-section-head-date">
-          {props.info.date}
+        <div className="comments__past-commentbox-body-text">
+          {props.info.comment}
         </div>
       </div>
-      <div className="comments__past-section-text">{props.info.comment}</div>
     </div>
   );
 }

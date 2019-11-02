@@ -2,18 +2,17 @@ import React from "react";
 var uniqid = require("uniqid");
 
 function NextVideo(props) {
+  let info = props.info;
   return (
     <div className="side__list-item">
       <img
         className="side__list-item-poster"
-        src={props.info.image}
-        alt="video"
-        height="100"
-        width="200"
+        src={info.image}
+        alt="current video"
       ></img>
       <div className="side__list-item-info">
-        <h4 className="side__list-item-title">{props.info.title}</h4>
-        <h4 className="side__list-item-author">{props.info.channel}</h4>
+        <h4 className="side__list-item-title">{info.title}</h4>
+        <h4 className="side__list-item-author">{info.channel}</h4>
       </div>
     </div>
   );

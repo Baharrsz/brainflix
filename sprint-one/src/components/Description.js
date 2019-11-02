@@ -1,6 +1,7 @@
 import React from "react";
 import eye from "../assets/icons/SVG/Icon-views.svg";
 import heart from "../assets/icons/SVG/Icon-likes.svg";
+import naturalDate from "./naturalDate";
 
 function Stats(props) {
   let info = props.info;
@@ -36,7 +37,9 @@ function HeadRow(props) {
     <div className="description__head">
       <div className="description__head-author">
         <div className="description__head-author-name">By{info.channel}</div>
-        <div className="description__head-author-date">{info.timestamp}</div>
+        <div className="description__head-author-date">
+          {naturalDate(info.timestamp)}
+        </div>
       </div>
       <Stats info={info} />
     </div>

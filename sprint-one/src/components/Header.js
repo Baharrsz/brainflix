@@ -17,8 +17,6 @@ function Header() {
             className="header__user-container-avatar avatar"
             src={avatar}
             alt="avatar"
-            height="40"
-            width="40"
           ></img>
         </div>
       </div>

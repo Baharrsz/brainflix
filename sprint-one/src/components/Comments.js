@@ -1,5 +1,6 @@
 import React from "react";
 import avatar from "../assets/images/Mohan-muruge.jpg";
+import naturalDate from "./naturalDate";
 
 var uniqid = require("uniqid");
 
@@ -35,8 +36,6 @@ function SingleComment(props) {
           className="comments__past-commentbox-avatar"
           alt="avatar"
           src={commentInfo.avatar}
-          width="40"
-          height="40"
         ></img>
       </div>
       <div className="comments__past-commentbox-body">
@@ -45,7 +44,7 @@ function SingleComment(props) {
             {commentInfo.name}
           </div>
           <div className="comments__past-commentbox-body-head-date">
-            {commentInfo.date}
+            {naturalDate(commentInfo.timestamp)}
           </div>
         </div>
         <div className="comments__past-commentbox-body-text">

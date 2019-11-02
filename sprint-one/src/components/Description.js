@@ -7,26 +7,18 @@ function Stats(props) {
   let info = props.info;
   return (
     <div className="description__head-stats">
-      <div className="description__head-stats-views">
-        <img
-          className="description__head-stats-views-icon"
-          src={eye}
-          alt="viewsIcon"
-        ></img>
-        <span className="description__head-stats-views-number">
-          {info.views}
-        </span>
-      </div>
-      <div className="description__head-stats-likes">
-        <img
-          className="description__head-stats-likes-icon"
-          src={heart}
-          alt="likesIcon"
-        ></img>
-        <span className="description__head-stats-likes-number">
-          {info.likes}
-        </span>
-      </div>
+      <img
+        className="description__head-stats-views-icon"
+        src={eye}
+        alt="viewsIcon"
+      ></img>
+      <h3 className="description__head-stats-views-number">{info.views}</h3>
+      <img
+        className="description__head-stats-likes-icon"
+        src={heart}
+        alt="likesIcon"
+      ></img>
+      <h3 className="description__head-stats-likes-number">{info.likes}</h3>
     </div>
   );
 }
@@ -35,12 +27,10 @@ function HeadRow(props) {
   let info = props.info;
   return (
     <div className="description__head">
-      <div className="description__head-author">
-        <div className="description__head-author-name">By{info.channel}</div>
-        <div className="description__head-author-date">
-          {naturalDate(info.timestamp)}
-        </div>
-      </div>
+      <h3 className="description__head-channel">By{info.channel}</h3>
+      <h3 className="description__head-author-date">
+        {naturalDate(info.timestamp)}
+      </h3>
       <Stats info={info} />
     </div>
   );

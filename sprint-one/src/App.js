@@ -100,13 +100,13 @@ class App extends React.Component {
   state = { mainVideo: mainVideo, sideArray: videosArray };
   render() {
     return (
-      <div className="App">
+      <>
         <Header />
         <MainContent
           videoInfo={this.state.mainVideo}
           sideArray={this.state.sideArray}
         />
-      </div>
+      </>
     );
   }
 }

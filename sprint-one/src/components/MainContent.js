@@ -16,17 +16,9 @@ export default function MainContent(props) {
           controls
         ></video>
       </div>
-
-      <div className="contents">
-        <div className="contents__left">
-          <Description info={videoInfo} />
-          <Comments commentsArray={videoInfo.comments} />
-        </div>
-
-        <div className="contents__right">
-          <Side videosArray={sideArray} />
-        </div>
-      </div>
+      <Description info={videoInfo} />
+      <Comments commentsArray={videoInfo.comments} />
+      <Side videosArray={sideArray} />
     </main>
   );
 }

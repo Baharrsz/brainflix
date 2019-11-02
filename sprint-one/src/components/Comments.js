@@ -7,22 +7,13 @@ var uniqid = require("uniqid");
 function NewComment() {
   return (
     <div className="comments__new">
-      <div className="comments__new-avatarbox">
-        <img className="comments__new-avatar" alt="avatar" src={avatar}></img>
-      </div>
-      <div className="comments__new-section">
-        <div className="comments__new-section-input">
-          <label className="comments__new-section-input-label">
-            JOIN THE CONVERSATION
-          </label>
-          <textarea
-            className="comments__new-section-input-text input"
-            placeholder="Write comment here"
-          ></textarea>
-        </div>
-
-        <button className="comments__new-section-btn btn">COMMENT</button>
-      </div>
+      <img className="comments__new-avatar" alt="avatar" src={avatar}></img>
+      <label className="comments__new-title">JOIN THE CONVERSATION</label>
+      <textarea
+        className="comments__new-input"
+        placeholder="Write comment here"
+      ></textarea>
+      <button className="comments__new-btn btn">COMMENT</button>
     </div>
   );
 }
@@ -30,27 +21,19 @@ function NewComment() {
 function SingleComment(props) {
   let commentInfo = props.commentInfo;
   return (
-    <div className="comments__past-commentbox">
-      <div className="comments__past-commentbox-avatarbox">
-        <img
-          className="comments__past-commentbox-avatar"
-          alt="avatar"
-          src={commentInfo.avatar}
-        ></img>
+    <div className="comments__past-comment">
+      <img
+        className="comments__past-comment-avatar avatar"
+        alt="avatar"
+        src={commentInfo.avatar}
+        width="50px"
+        height="50px"
+      ></img>
+      <div className="comments__past-comment-name">{commentInfo.name}</div>
+      <div className="comments__past-comment-date">
+        {naturalDate(commentInfo.timestamp)}
       </div>
-      <div className="comments__past-commentbox-body">
-        <div className="comments__past-commentbox-body-head">
-          <div className="comments__past-commentbox-body-head-name">
-            {commentInfo.name}
-          </div>
-          <div className="comments__past-commentbox-body-head-date">
-            {naturalDate(commentInfo.timestamp)}
-          </div>
-        </div>
-        <div className="comments__past-commentbox-body-text">
-          {commentInfo.comment}
-        </div>
-      </div>
+      <div className="comments__past-comment-text">{commentInfo.comment}</div>
     </div>
   );
 }

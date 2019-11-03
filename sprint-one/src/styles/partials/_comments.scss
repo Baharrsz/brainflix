@@ -148,49 +148,16 @@
 
 @include large {
   .comments {
-    width: 61.94vw;
-
     &__new {
-      display: flex;
-      width: 93.75vw;
-      margin-bottom: 24px;
-
-      &-avatar {
-        margin-top: 16px;
-      }
-      &-section {
-        display: flex;
-        justify-content: flex-start;
-        margin-left: 2.08vw;
-        align-items: center;
-
-        &-input {
-          width: 30.28vw;
-
-          &-text {
-            width: 30.28vw;
-            height: 48px;
-          }
-        }
-        &-btn {
-          width: 11.11vw;
-          margin: 16px 0 0 1.11vw;
-        }
-      }
+      grid-template-columns: 48px 24px 30.28vw 16px 160px 4px;
     }
 
     &__past {
-      &-commentbox {
-        width: 49.44vw;
+      &-comment {
+        // grid-template-columns: 40px 16px auto 1fr 40px;
 
-        &-body {
-          &-head {
-            justify-content: flex-start;
-
-            &-name {
-              margin-right: 3.12vw;
-            }
-          }
+        &-text {
+          width: 40vw;
         }
       }
     }

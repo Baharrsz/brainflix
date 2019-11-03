@@ -357,52 +357,12 @@ label,
 }
 
 @media only screen and (min-width: 1024px) {
-  .comments {
-    width: 61.94vw;
-  }
   .comments__new {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 93.75vw;
-    margin-bottom: 24px;
+    -ms-grid-columns: 48px 24px 30.28vw 16px 160px 4px;
+        grid-template-columns: 48px 24px 30.28vw 16px 160px 4px;
   }
-  .comments__new-avatar {
-    margin-top: 16px;
-  }
-  .comments__new-section {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    margin-left: 2.08vw;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .comments__new-section-input {
-    width: 30.28vw;
-  }
-  .comments__new-section-input-text {
-    width: 30.28vw;
-    height: 48px;
-  }
-  .comments__new-section-btn {
-    width: 11.11vw;
-    margin: 16px 0 0 1.11vw;
-  }
-  .comments__past-commentbox {
-    width: 49.44vw;
-  }
-  .comments__past-commentbox-body-head {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-  }
-  .comments__past-commentbox-body-head-name {
-    margin-right: 3.12vw;
+  .comments__past-comment-text {
+    width: 40vw;
   }
 }
 
@@ -602,9 +562,6 @@ label,
   .video__player {
     width: 65.56%;
   }
-  .description {
-    padding-right: 1.67vw;
-  }
   .description__head-stats {
     margin-right: 2.22vw;
   }
@@ -768,16 +725,16 @@ body {
     -ms-grid-column: 1;
     -ms-grid-column-span: 3;
     grid-area: m;
-    -ms-grid-columns: 12.5vw 51.11vw 23.89vw 12.5vw;
-        grid-template-columns: 12.5vw 51.11vw 23.89vw 12.5vw;
+    -ms-grid-columns: 12.5vw 49.44vw 24px 23.89vw 12.5vw;
+        grid-template-columns: 12.5vw 49.44vw 24px 23.89vw 12.5vw;
     -ms-grid-rows: 37.5vw auto auto;
         grid-template-rows: 37.5vw auto auto;
-        grid-template-areas: "v v v v" ". d s ." ". c s .";
+        grid-template-areas: "v v v v v" ". d . s ." ". c . s .";
   }
   .video {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
-    -ms-grid-column-span: 4;
+    -ms-grid-column-span: 5;
     grid-area: v;
   }
   .description {
@@ -793,7 +750,7 @@ body {
   .side {
     -ms-grid-row: 2;
     -ms-grid-row-span: 2;
-    -ms-grid-column: 3;
+    -ms-grid-column: 4;
     grid-area: s;
   }
 }

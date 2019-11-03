@@ -82,12 +82,12 @@ body {
 
   .main {
     grid-area: m;
-    grid-template-columns: 12.5vw 51.11vw 23.89vw 12.5vw;
+    grid-template-columns: 12.5vw 49.44vw 24px 23.89vw 12.5vw;
     grid-template-rows: 37.5vw auto auto;
     grid-template-areas:
-      "v v v v"
-      ". d s ."
-      ". c s .";
+      "v v v v v"
+      ". d . s ."
+      ". c . s .";
   }
 
   .video {

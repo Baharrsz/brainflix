@@ -33,7 +33,7 @@ const videosArray = [
   },
   {
     image: image4,
-    author: "Emily Harper",
+    channel: "Emily Harper",
     title: "Cheap Airline Tickets Great Ways To Save"
   },
   {

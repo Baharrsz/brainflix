@@ -4,79 +4,72 @@
 }
 
 .comments {
-  margin: 0 auto;
-  width: 90vw;
-
   &__count {
     font-family: "AvenirDemiBold";
     margin-bottom: 32px;
   }
 
   &__new {
-    display: flex;
-    width: 90vw;
+    display: grid;
+    grid-template-columns: 48px 70vw;
+    grid-template-rows: auto auto 88px; //88=48+(margins)=48+16+24
+    grid-template-areas:
+      ". t"
+      "a i"
+      ". b";
+    column-gap: 16px;
 
-    &-avatarbox {
-      width: 48px;
+    &-title {
+      grid-area: t;
     }
+
     &-avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      margin-top: 16px;
+      grid-area: a;
     }
-    &-section {
-      margin-left: 5vw;
 
-      &-input-text {
-        width: 70vw;
-        height: 30vw;
-        resize: none;
-      }
-      &-btn {
-        width: 70vw;
-        margin: 16px 0 24px 0;
-      }
+    &-input {
+      grid-area: i;
+      height: 30vw;
+      resize: none;
+    }
+    &-btn {
+      grid-area: b;
+      margin-top: 16px;
     }
   }
 
   &__past {
-    &-commentbox {
-      display: flex;
-      padding: 24px 0;
-      border-top: 0.5px solid $mercury;
-      border-bottom: 0.5px solid $mercury;
+    & > :last-child {
+      border-bottom: 1px solid $mercury;
+    }
 
-      &-avatarbox {
-        width: 48px;
-      }
+    &-comment {
+      border-top: 1px solid $mercury;
+      display: grid;
+      grid-template-columns: 16.87vw 48.75vw 24.37vw;
+      grid-template-rows: 32px auto auto;
+      grid-template-areas:
+        ". . ."
+        "a n d"
+        "a t t";
+
       &-avatar {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
+        grid-area: a;
       }
 
-      &-body {
-        width: 70vw;
-        margin-left: 16px;
+      &-name {
+        grid-area: n;
+        font-family: "AvenirDemiBold";
+      }
+      &-date {
+        grid-area: d;
+        color: $silver;
+      }
 
-        &-head {
-          display: flex;
-          justify-content: space-between;
-          margin-bottom: 16px;
-          width: 100%;
-
-          &-name {
-            font-family: "AvenirDemiBold";
-          }
-          &-date {
-            color: $silver;
-          }
-        }
-
-        &-text {
-          overflow-wrap: break-word;
-        }
+      &-text {
+        grid-area: t;
+        overflow-wrap: break-word;
+        margin-bottom: 24px;
       }
     }
   }

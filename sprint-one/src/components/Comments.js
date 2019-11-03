@@ -7,11 +7,15 @@ var uniqid = require("uniqid");
 function NewComment() {
   return (
     <div className="comments__new">
-      <img className="comments__new-avatar" alt="avatar" src={avatar}></img>
+      <img
+        className="comments__new-avatar avatar"
+        alt="avatar"
+        src={avatar}
+      ></img>
       <label className="comments__new-title">JOIN THE CONVERSATION</label>
       <textarea
-        className="comments__new-input"
-        placeholder="Write comment here"
+        className="comments__new-input input"
+        placeholder="Write your comment here"
       ></textarea>
       <button className="comments__new-btn btn">COMMENT</button>
     </div>

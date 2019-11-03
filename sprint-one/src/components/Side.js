@@ -10,10 +10,8 @@ function NextVideo(props) {
         src={info.image}
         alt="current video"
       ></img>
-      <div className="side__list-item-info">
-        <h4 className="side__list-item-title">{info.title}</h4>
-        <h4 className="side__list-item-author">{info.channel}</h4>
-      </div>
+      <h4 className="side__list-item-title">{info.title}</h4>
+      <h4 className="side__list-item-channel">{info.channel}</h4>
     </div>
   );
 }

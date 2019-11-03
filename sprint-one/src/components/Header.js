@@ -6,15 +6,9 @@ function Header() {
   return (
     <header className="header">
       <img className="header__logo" src={logo} alt="logo"></img>
-      <input className="header__input input" placeholder="search"></input>
+      <input className="header__input input" placeholder="Search"></input>
       <button className="header__btn btn">UPLOAD</button>
-      <img
-        className="header__avatar avatar"
-        src={avatar}
-        alt="avatar"
-        width="50px"
-        height="50px"
-      ></img>
+      <img className="header__avatar avatar" src={avatar} alt="avatar"></img>
     </header>
   );
 }

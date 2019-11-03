@@ -7,7 +7,7 @@ export default function MainContent(props) {
   let { videoInfo, sideArray } = props;
 
   return (
-    <main>
+    <main className="main">
       <div className="video">
         <video
           className="video__player"

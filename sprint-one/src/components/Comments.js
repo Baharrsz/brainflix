@@ -26,8 +26,6 @@ function SingleComment(props) {
         className="comments__past-comment-avatar avatar"
         alt="avatar"
         src={commentInfo.avatar}
-        width="50px"
-        height="50px"
       ></img>
       <div className="comments__past-comment-name">{commentInfo.name}</div>
       <div className="comments__past-comment-date">

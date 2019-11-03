@@ -1,120 +1,83 @@
 .header {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 48px 57px 64px;
+  column-gap: 5vw;
+  grid-template-areas:
+    "l l"
+    "i i"
+    "b a";
 
   &__logo {
-    margin: 16px 0 8px 0;
+    margin: auto;
+    grid-area: l;
   }
 
-  &__user {
+  &__input {
     width: 90vw;
+    height: 48px;
+    grid-area: i;
+    background-image: url(../assets/icons/SVG/Icon-search.svg);
+    background-repeat: no-repeat;
+    background-position: 15px 15px;
+    padding-left: 40px;
 
-    &-search {
-      width: 90vw;
-      height: 48px;
-      background-image: url(../assets/icons/SVG/Icon-search.svg);
-      background-repeat: no-repeat;
-      background-position: 15px 17px;
-      padding-left: 32px;
+    &::placeholder {
+      font-size: 16px;
+      color: $black;
     }
+  }
 
-    &-container {
-      width: 90vw;
-      display: flex;
-      align-items: center;
+  &__btn {
+    width: 70vw;
+    grid-area: b;
+    background-image: url(../assets/icons/SVG/Icon-upload.svg);
+    background-repeat: no-repeat;
+    background-position: 20vw 17px;
+    text-align: right;
+    padding-right: 20vw;
+  }
 
-      &-btn {
-        width: 70vw;
-        margin: 8px 16px 16px 0;
-        background-image: url(../assets/icons/SVG/Icon-upload.svg);
-        background-repeat: no-repeat;
-        background-position: 65px 17px;
-        text-align: right;
-        padding-right: 76px;
-      }
-
-      &-avatar {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        margin: 8px 0 16px 0;
-      }
-    }
+  &__avatar {
+    grid-area: a;
   }
 }
 
 @include medium {
   .header {
-    height: 80px;
-    flex-direction: row;
+    display: flex;
+    align-items: center;
 
     &__logo {
-      margin: 16px 22vw 16px 3.12vw;
+      margin-right: 22vw;
     }
 
-    &__user {
-      display: flex;
-      align-items: center;
-      width: 60%;
-
-      &-search {
-        width: 60%;
-        margin: 16px 3.12vw 16px 0;
-      }
-
-      &-container {
-        width: 40%;
-
-        &-btn {
-          width: 15vw;
-          margin: 16px 3.12vw 16px 0;
-          background-position: 7px 17px;
-          padding-right: 14px;
-        }
-
-        &-avatar {
-          margin: 16px 3.12vw 16px 0;
-        }
-      }
+    &__input {
+      width: 36vw;
+      margin-right: 24px;
+    }
+    &__btn {
+      width: 16vw;
+      background-position: 1vw 17px;
+      padding-right: 2vw;
+      margin-right: 24px;
     }
   }
 }
 
 @include large {
   .header {
-    height: 80px;
-    flex-direction: row;
-
     &__logo {
-      margin: 16px 35.34vw 16px 12.5vw;
+      margin-right: 35.35vw;
     }
 
-    &__user {
-      width: 40%;
-      display: flex;
-      align-items: center;
-
-      &-search {
-        width: 40%;
-        margin: 16px 1.67vw 16px 0;
-      }
-
-      &-container {
-        width: 60%;
-
-        &-btn {
-          width: 20vw;
-          margin: 16px 1.67vw 16px 0;
-          background-position: 7px 17px;
-          padding-right: 16px;
-        }
-
-        &-avatar {
-          margin: 16px 12.5vw 16px 0;
-        }
-      }
+    &__input {
+      width: 36vw;
+    }
+    &__btn {
+      width: 16vw;
+      background-position: 1vw 17px;
+      padding-right: 1vw;
     }
   }
 }

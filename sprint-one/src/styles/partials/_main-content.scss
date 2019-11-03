@@ -1,15 +1,10 @@
 .video {
-  width: 100vw;
-  height: 57.19vw;
   background-color: black;
   text-align: center;
 
   &__player {
     width: 100%;
   }
-}
-.contents {
-  padding: 0 5vw;
 }
 
 .description {
@@ -21,23 +16,22 @@
   &__head {
     border-bottom: 1px solid $mercury;
 
-    &-author {
+    &-publish-info {
       display: flex;
-      margin-bottom: 32px;
+    }
 
-      &-name {
-        font-family: "AvenirDemiBold";
-      }
+    &-channel {
+      font-family: "AvenirDemiBold";
+    }
 
-      &-date {
-        margin-left: 2.5vw;
-        color: $silver;
-      }
+    &-date {
+      margin-left: 8px;
+      color: $silver;
     }
 
     &-stats {
       display: flex;
-      margin-bottom: 24px;
+      margin: 32px 0 24px 0;
 
       &-views-icon {
         margin-right: 8px;
@@ -56,15 +50,9 @@
 
 @include medium {
   .video {
-    height: 52.08vw;
-
     &__player {
       width: 91.15%;
     }
-  }
-
-  .contents {
-    padding: 0 3.12vw;
   }
 
   .description {
@@ -78,7 +66,7 @@
       padding-bottom: 24px;
       border-bottom: 1px solid $mercury;
 
-      &-author {
+      &-channel {
         margin: 0;
       }
       &-stats {
@@ -87,6 +75,7 @@
     }
 
     &__text {
+      width: 64.58vw;
       margin: 40px 0 64px 0;
       border-bottom: none;
     }
@@ -95,29 +84,14 @@
 
 @include large {
   .video {
-    height: 37.5vw;
-
     &__player {
       width: 65.56%;
     }
   }
 
-  .contents {
-    padding: 0 12.5vw;
-    display: flex;
-
-    &__left {
-      width: 49.44vw;
-      margin-right: 1.67vw;
-    }
-
-    &__right {
-      width: 23.89vw;
-      margin-top: 40px;
-    }
-  }
-
   .description {
+    padding-right: 1.67vw;
+
     &__head-stats {
       margin-right: 2.22vw;
     }

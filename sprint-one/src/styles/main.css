@@ -488,18 +488,12 @@ label,
 }
 
 .video {
-  width: 100vw;
-  height: 57.19vw;
   background-color: black;
   text-align: center;
 }
 
 .video__player {
   width: 100%;
-}
-
-.contents {
-  padding: 0 5vw;
 }
 
 .description__title {
@@ -511,19 +505,18 @@ label,
   border-bottom: 1px solid #e1e1e1;
 }
 
-.description__head-author {
+.description__head-publish-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 32px;
 }
 
-.description__head-author-name {
+.description__head-channel {
   font-family: "AvenirDemiBold";
 }
 
-.description__head-author-date {
-  margin-left: 2.5vw;
+.description__head-date {
+  margin-left: 8px;
   color: #afafaf;
 }
 
@@ -531,7 +524,7 @@ label,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 24px;
+  margin: 32px 0 24px 0;
 }
 
 .description__head-stats-views-icon {
@@ -548,14 +541,8 @@ label,
 }
 
 @media only screen and (min-width: 768px) {
-  .video {
-    height: 52.08vw;
-  }
   .video__player {
     width: 91.15%;
-  }
-  .contents {
-    padding: 0 3.12vw;
   }
   .description__title {
     margin: 48px 0 24px 0;
@@ -570,38 +557,25 @@ label,
     padding-bottom: 24px;
     border-bottom: 1px solid #e1e1e1;
   }
-  .description__head-author {
+  .description__head-channel {
     margin: 0;
   }
   .description__head-stats {
     margin: 0;
   }
   .description__text {
+    width: 64.58vw;
     margin: 40px 0 64px 0;
     border-bottom: none;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  .video {
-    height: 37.5vw;
-  }
   .video__player {
     width: 65.56%;
   }
-  .contents {
-    padding: 0 12.5vw;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .contents__left {
-    width: 49.44vw;
-    margin-right: 1.67vw;
-  }
-  .contents__right {
-    width: 23.89vw;
-    margin-top: 40px;
+  .description {
+    padding-right: 1.67vw;
   }
   .description__head-stats {
     margin-right: 2.22vw;

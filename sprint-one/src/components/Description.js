@@ -27,10 +27,13 @@ function HeadRow(props) {
   let info = props.info;
   return (
     <div className="description__head">
-      <h3 className="description__head-channel">By{info.channel}</h3>
-      <h3 className="description__head-author-date">
-        {naturalDate(info.timestamp)}
-      </h3>
+      <div className="description__head-publish-info">
+        <h3 className="description__head-channel">By {info.channel}</h3>
+        <h3 className="description__head-date">
+          {naturalDate(info.timestamp)}
+        </h3>
+      </div>
+
       <Stats info={info} />
     </div>
   );

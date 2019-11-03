@@ -46,15 +46,17 @@
     &-comment {
       border-top: 1px solid $mercury;
       display: grid;
-      grid-template-columns: 16.87vw 48.75vw 24.37vw;
+      grid-template-columns: 40px 16px 48.75vw 24.37vw;
       grid-template-rows: 32px auto auto;
       grid-template-areas:
-        ". . ."
-        "a n d"
-        "a t t";
+        ". . . ."
+        "a . n d"
+        "a . t t";
 
       &-avatar {
         grid-area: a;
+        width: 40px;
+        height: 40px;
       }
 
       &-name {
@@ -77,49 +79,67 @@
 
 @include medium {
   .comments {
-    width: 93.75vw;
-
     &__new {
-      display: flex;
-      width: 93.75vw;
-      margin-bottom: 24px;
+      grid-template-columns: 48px 24px 57.29vw 16px 160px 40px;
+      grid-template-rows: auto 72px;
+      grid-template-areas:
+        ". . t . . ."
+        "a . i . b .";
+      gap: 0;
+
+      &-title {
+        grid-area: t;
+      }
 
       &-avatar {
-        margin-top: 16px;
+        grid-area: a;
       }
-      &-section {
-        display: flex;
-        justify-content: flex-start;
-        margin-left: 2.08vw;
-        align-items: center;
 
-        &-input {
-          width: 57.29vw;
-
-          &-text {
-            width: 57.29vw;
-            height: 48px;
-          }
-        }
-        &-btn {
-          width: 20.83vw;
-          margin: 16px 5.21vw 0 2.08vw;
-        }
+      &-input {
+        grid-area: i;
+        height: 48px;
+        resize: none;
+      }
+      &-btn {
+        grid-area: b;
+        margin: 0;
       }
     }
 
     &__past {
-      &-commentbox {
-        &-body {
+      & > :last-child {
+        border-bottom: 1px solid $mercury;
+      }
+
+      &-comment {
+        border-top: 1px solid $mercury;
+        display: grid;
+        grid-template-columns: 40px 16px auto 1fr 40px;
+        grid-template-rows: 32px auto auto;
+        grid-template-areas:
+          ". . . . ."
+          "a . n d ."
+          "a . t t .";
+
+        &-avatar {
+          grid-area: a;
+        }
+
+        &-name {
+          grid-area: n;
+          font-family: "AvenirDemiBold";
+          margin-right: 16px;
+        }
+        &-date {
+          grid-area: d;
+          color: $silver;
+        }
+
+        &-text {
+          grid-area: t;
           width: 81.25vw;
-
-          &-head {
-            justify-content: flex-start;
-
-            &-name {
-              margin-right: 3.12vw;
-            }
-          }
+          overflow-wrap: break-word;
+          margin-bottom: 24px;
         }
       }
     }

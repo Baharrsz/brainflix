@@ -10,7 +10,7 @@ let url = "https://project-2-api.herokuapp.com";
 
 export default class MainContent extends React.Component {
   state = {
-    sideArray: this.props.sideArray,
+    sideArray: undefined,
     mainVideo: undefined
   };
 
@@ -30,8 +30,27 @@ export default class MainContent extends React.Component {
 
   getVideoData(id) {
     Axios.get(url + "/videos/" + id + apiKey).then(response => {
-      this.setState({ mainVideo: response.data });
+      this.setState({
+        mainVideo: response.data,
+        sideArray: this.props.sideArray
+      });
     });
+  }
+
+  changeVideosArray(sideArray, id) {
+    let mainVideo = this.state.mainVideo;
+    let match = sideArray.findIndex(video => {
+      return video.id === id;
+    });
+    sideArray.splice(match, 1);
+    let currentVideo = {
+      id: mainVideo.id,
+      channel: mainVideo.channel,
+      image: mainVideo.image,
+      title: mainVideo.title
+    };
+    sideArray.push(currentVideo);
+    this.setState({ sideArray: sideArray });
   }
 
   componentDidMount() {
@@ -41,6 +60,7 @@ export default class MainContent extends React.Component {
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
       this.getVideoData(this.props.id);
+      this.changeVideosArray(this.state.sideArray, this.props.id);
     }
   }
 }

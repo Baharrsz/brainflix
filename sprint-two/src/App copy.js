@@ -102,14 +102,15 @@ let apiKey = "?api_key=" + "ee5cb60a-b529-4112-ab42-6392a28f2a85";
 let url = "https://project-2-api.herokuapp.com";
 
 class App extends React.Component {
-  state = { sideArray: undefined };
+  state = { mainVideo: undefined, sideArray: undefined };
 
   render() {
-    if (this.state.sideArray) {
+    if (this.state.mainVideo) {
       return (
         <>
           <BrowserRouter>
             <Header />
+
             <Switch>
               <Route
                 exact
@@ -117,8 +118,8 @@ class App extends React.Component {
                 render={() => {
                   return (
                     <MainContent
+                      videoInfo={this.state.mainVideo}
                       sideArray={this.state.sideArray}
-                      id={this.state.sideArray[0].id}
                     />
                   );
                 }}
@@ -127,10 +128,21 @@ class App extends React.Component {
               <Route
                 path="/:id"
                 render={props => {
+                  // let id = props.match.params.id;
+                  // let match = this.state.sideArray.findIndex(video => {
+                  //   return video.id === id;
+                  // });
+                  // console.log("match", match);
+                  // let clone = this.state.sideArray;
+                  // clone.splice(match, 1);
+                  // console.log("clone", clone);
+                  // if (match >= 0) this.setState({ sideArray: clone });
+
                   return (
                     <MainContent
+                      match={props.match}
+                      videoInfo={this.state.mainVideo}
                       sideArray={this.state.sideArray}
-                      id={props.match.params.id}
                     />
                   );
                 }}
@@ -145,9 +157,14 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    Axios.get(url + "/videos/" + apiKey).then(response => {
-      this.setState({ sideArray: response.data });
-    });
+    Axios.get(url + "/videos/" + apiKey)
+      .then(response => {
+        this.setState({ sideArray: response.data });
+        return Axios.get(url + "/videos/1af0jruup5gu" + apiKey);
+      })
+      .then(response => {
+        this.setState({ mainVideo: response.data });
+      });
   }
 }
 

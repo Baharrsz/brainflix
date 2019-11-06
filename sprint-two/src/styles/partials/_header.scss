@@ -1,0 +1,83 @@
+.header {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 48px 57px 64px;
+  column-gap: 5vw;
+  grid-template-areas:
+    "l l"
+    "i i"
+    "b a";
+
+  &__logo {
+    margin: auto;
+    grid-area: l;
+  }
+
+  &__input {
+    width: 90vw;
+    height: 48px;
+    grid-area: i;
+    background-image: url(../assets/icons/SVG/Icon-search.svg);
+    background-repeat: no-repeat;
+    background-position: 15px 15px;
+    padding-left: 40px;
+
+    &::placeholder {
+      font-size: 16px;
+      color: $black;
+    }
+  }
+
+  &__btn {
+    width: 70vw;
+    grid-area: b;
+    background-image: url(../assets/icons/SVG/Icon-upload.svg);
+    background-repeat: no-repeat;
+    background-position: 20vw 17px;
+    text-align: right;
+    padding-right: 20vw;
+  }
+
+  &__avatar {
+    grid-area: a;
+  }
+}
+
+@include medium {
+  .header {
+    display: flex;
+    align-items: center;
+
+    &__logo {
+      margin-right: 22vw;
+    }
+
+    &__input {
+      width: 36vw;
+      margin-right: 24px;
+    }
+    &__btn {
+      width: 16vw;
+      background-position: 1vw 17px;
+      padding-right: 2vw;
+      margin-right: 24px;
+    }
+  }
+}
+
+@include large {
+  .header {
+    &__logo {
+      margin-right: 35.35vw;
+    }
+
+    &__input {
+      width: 36vw;
+    }
+    &__btn {
+      width: 16vw;
+      background-position: 1vw 17px;
+      padding-right: 1vw;
+    }
+  }
+}

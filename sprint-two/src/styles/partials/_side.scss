@@ -1,0 +1,68 @@
+.side {
+  padding-top: 40px;
+
+  &__list {
+    margin-top: 40px;
+
+    &-item {
+      margin-bottom: 24px;
+      height: 70px;
+      line-height: 18px;
+
+      display: grid;
+      grid-template-columns: 120px 16px auto;
+      grid-template-rows: auto 16px auto;
+      grid-template-areas:
+        "p . t"
+        "p . ."
+        "p . c";
+
+      &-poster {
+        grid-area: p;
+        width: 120px;
+        height: 70px;
+        border-radius: 4px;
+      }
+
+      &-title {
+        grid-area: t;
+        font-family: "AvenirDemiBold";
+        flex-wrap: wrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+
+      &-channel {
+        grid-area: c;
+      }
+    }
+  }
+}
+
+@include medium {
+  .side {
+    &__list {
+      &-item {
+        &-title {
+          width: 30vw;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+}
+
+@include large {
+  .side {
+    &__list {
+      &-item {
+        &-title {
+          width: unset;
+        }
+      }
+    }
+  }
+}

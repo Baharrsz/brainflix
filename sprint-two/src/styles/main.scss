@@ -1,0 +1,105 @@
+@import "./partials/breakpoints";
+@import "./partials/colors";
+@import "./partials/fonts";
+@import "./partials/typography";
+@import "./partials/btns-inputs-avatars.scss";
+@import "./partials/comments";
+@import "./partials/header";
+@import "./partials/main-content";
+@import "./partials/side.scss";
+
+html,
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "AvenirRegular";
+  height: 100vh;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+#root {
+  display: grid;
+  grid-template-columns: 5fr 90fr 5fr;
+  grid-template-rows: 169px auto;
+  grid-template-areas:
+    ". h ."
+    "m m m";
+}
+.header {
+  grid-area: h;
+}
+.main {
+  grid-area: m;
+  display: grid;
+  grid-template-columns: 5vw 90vw 5vw;
+  grid-template-rows: 57.19vw auto auto auto;
+  grid-template-areas:
+    "v v v"
+    ". d ."
+    ". c ."
+    ". s .";
+}
+.video {
+  grid-area: v;
+}
+.description {
+  grid-area: d;
+}
+.comments {
+  grid-area: c;
+}
+.side {
+  grid-area: s;
+}
+
+@include medium {
+  #root {
+    grid-template-columns: 3.125vw 93.75vw 3.125vw;
+    grid-template-rows: 80px auto;
+  }
+
+  .main {
+    grid-template-rows: 52.08vw auto auto auto;
+  }
+}
+
+@include large {
+  #root {
+    grid-template-columns: 12.5vw 75vw 12.5vw;
+    grid-template-rows: 80px auto;
+    grid-template-areas:
+      ". h ."
+      "m m m";
+  }
+  .header {
+    grid-area: h;
+  }
+
+  .main {
+    grid-area: m;
+    grid-template-columns: 12.5vw 49.44vw 24px 23.89vw 12.5vw;
+    grid-template-rows: 37.5vw auto auto;
+    grid-template-areas:
+      "v v v v v"
+      ". d . s ."
+      ". c . s .";
+  }
+
+  .video {
+    grid-area: v;
+  }
+  .description {
+    grid-area: d;
+  }
+  .comments {
+    grid-area: c;
+  }
+  .side {
+    grid-area: s;
+  }
+}

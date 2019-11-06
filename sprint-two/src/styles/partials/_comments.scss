@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.comments {
+  &__count {
+    font-family: "AvenirDemiBold";
+    margin-bottom: 32px;
+  }
+
+  &__new {
+    display: grid;
+    grid-template-columns: 48px 70vw;
+    grid-template-rows: auto auto 88px; //88=48+(margins)=48+16+24
+    grid-template-areas:
+      ". t"
+      "a i"
+      ". b";
+    column-gap: 16px;
+
+    &-title {
+      grid-area: t;
+    }
+
+    &-avatar {
+      grid-area: a;
+    }
+
+    &-input {
+      grid-area: i;
+      height: 30vw;
+      resize: none;
+    }
+    &-btn {
+      grid-area: b;
+      margin-top: 16px;
+    }
+  }
+
+  &__past {
+    & > :last-child {
+      border-bottom: 1px solid $mercury;
+    }
+
+    &-comment {
+      border-top: 1px solid $mercury;
+      display: grid;
+      grid-template-columns: 40px 16px 48.75vw 24.37vw;
+      grid-template-rows: 32px auto auto;
+      grid-template-areas:
+        ". . . ."
+        "a . n d"
+        "a . t t";
+
+      &-avatar {
+        grid-area: a;
+        width: 40px;
+        height: 40px;
+      }
+
+      &-name {
+        grid-area: n;
+        font-family: "AvenirDemiBold";
+      }
+      &-date {
+        grid-area: d;
+        color: $silver;
+      }
+
+      &-text {
+        grid-area: t;
+        overflow-wrap: break-word;
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
+
+@include medium {
+  .comments {
+    &__new {
+      grid-template-columns: 48px 24px 57.29vw 16px 160px 40px;
+      grid-template-rows: auto 72px;
+      grid-template-areas:
+        ". . t . . ."
+        "a . i . b .";
+      gap: 0;
+
+      &-title {
+        grid-area: t;
+      }
+
+      &-avatar {
+        grid-area: a;
+      }
+
+      &-input {
+        grid-area: i;
+        height: 48px;
+        resize: none;
+      }
+      &-btn {
+        grid-area: b;
+        margin: 0;
+      }
+    }
+
+    &__past {
+      & > :last-child {
+        border-bottom: 1px solid $mercury;
+      }
+
+      &-comment {
+        border-top: 1px solid $mercury;
+        display: grid;
+        grid-template-columns: 40px 16px auto 1fr 40px;
+        grid-template-rows: 32px auto auto;
+        grid-template-areas:
+          ". . . . ."
+          "a . n d ."
+          "a . t t .";
+
+        &-avatar {
+          grid-area: a;
+        }
+
+        &-name {
+          grid-area: n;
+          font-family: "AvenirDemiBold";
+          margin-right: 16px;
+        }
+        &-date {
+          grid-area: d;
+          color: $silver;
+        }
+
+        &-text {
+          grid-area: t;
+          width: 81.25vw;
+          overflow-wrap: break-word;
+          margin-bottom: 24px;
+        }
+      }
+    }
+  }
+}
+
+@include large {
+  .comments {
+    &__new {
+      grid-template-columns: 48px 24px 30.28vw 16px 160px 4px;
+    }
+
+    &__past {
+      &-comment {
+        // grid-template-columns: 40px 16px auto 1fr 40px;
+
+        &-text {
+          width: 40vw;
+        }
+      }
+    }
+  }
+}

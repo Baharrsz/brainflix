@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
 import MainContent from "./components/MainContent";
+import UploadPage from "./components/UploadPage";
 // import avatar1 from "./assets/images/user-1.jpg";
 // import avatar2 from "./assets/images/user-2.jpg";
 // import avatar3 from "./assets/images/user-3.jpg";
@@ -112,9 +113,11 @@ class App extends React.Component {
         this.setState({ mainVideo: response.data });
       });
   }
+
+  componentDidUpdate() {}
+
   render() {
     if (this.state.mainVideo) {
-      console.log("this.state.mainVideo here", this.state.mainVideo);
       return (
         <>
           <BrowserRouter>
@@ -122,6 +125,7 @@ class App extends React.Component {
 
             <Switch>
               <Route
+                exact
                 path="/"
                 render={() => (
                   <MainContent
@@ -130,7 +134,16 @@ class App extends React.Component {
                   />
                 )}
               />
-              <Route path="/upload" component={}/>
+              <Route path="/upload" component={UploadPage} />
+              <Route
+                path="/:id"
+                render={props => (
+                  <MainContent
+                    videoInfo={this.state.mainVideo}
+                    sideArray={this.state.sideArray}
+                  />
+                )}
+              />
             </Switch>
           </BrowserRouter>
         </>

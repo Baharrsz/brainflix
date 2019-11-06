@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 var uniqid = require("uniqid");
 
 function NextVideo(props) {
@@ -10,7 +11,9 @@ function NextVideo(props) {
         src={info.image}
         alt="current video"
       ></img>
-      <h4 className="side__list-item-title">{info.title}</h4>
+      <Link to={`/${info.id}`}>
+        <h4 className="side__list-item-title">{info.title}</h4>
+      </Link>
       <h4 className="side__list-item-channel">{info.channel}</h4>
     </div>
   );

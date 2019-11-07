@@ -5,12 +5,12 @@ import Video from "./Video";
 import Side from "./Side";
 import Axios from "axios";
 
-let apiKey = "?api_key=" + "ee5cb60a-b529-4112-ab42-6392a28f2a85";
+let apiKey = "ee5cb60a-b529-4112-ab42-6392a28f2a85";
 let url = "https://project-2-api.herokuapp.com";
 
 export default class MainContent extends React.Component {
   state = {
-    sideArray: undefined,
+    sideArray: this.props.sideArray,
     mainVideo: undefined
   };
 
@@ -29,38 +29,42 @@ export default class MainContent extends React.Component {
   }
 
   getVideoData(id) {
-    Axios.get(url + "/videos/" + id + apiKey).then(response => {
+    Axios.get(`${url}/videos/${id}?api_key=${apiKey}`).then(response => {
       this.setState({
-        mainVideo: response.data,
-        sideArray: this.props.sideArray
+        mainVideo: response.data
       });
     });
   }
 
-  changeVideosArray(sideArray, id) {
+  changeVideosArray() {
+    let id = this.props.id;
+    let sideArray = this.state.sideArray;
     let mainVideo = this.state.mainVideo;
     let match = sideArray.findIndex(video => {
       return video.id === id;
     });
     sideArray.splice(match, 1);
-    let currentVideo = {
-      id: mainVideo.id,
-      channel: mainVideo.channel,
-      image: mainVideo.image,
-      title: mainVideo.title
-    };
-    sideArray.push(currentVideo);
+    if (mainVideo) {
+      let currentVideo = {
+        id: mainVideo.id,
+        channel: mainVideo.channel,
+        image: mainVideo.image,
+        title: mainVideo.title
+      };
+      sideArray.push(currentVideo);
+    }
     this.setState({ sideArray: sideArray });
   }
 
   componentDidMount() {
     this.getVideoData(this.props.id);
+    this.changeVideosArray();
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
       this.getVideoData(this.props.id);
-      this.changeVideosArray(this.state.sideArray, this.props.id);
+      this.changeVideosArray();
     }
   }
 }

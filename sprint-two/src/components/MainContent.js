@@ -12,7 +12,8 @@ export default class MainContent extends React.Component {
   state = {
     sideArray: this.props.sideArray,
     mainVideo: undefined,
-    removedVideo: undefined
+    removedVideo: undefined,
+    newCommentsReceived: false
   };
 
   render() {
@@ -47,7 +48,10 @@ export default class MainContent extends React.Component {
       return (!video || video.id) === this.props.id;
     });
     let [removedVideo] = sideArray.splice(match, 1, this.state.removedVideo);
-    this.setState({ sideArray: sideArray, removedVideo: removedVideo });
+    this.setState({
+      sideArray: sideArray,
+      removedVideo: removedVideo
+    });
   }
 
   componentDidMount() {
@@ -55,8 +59,12 @@ export default class MainContent extends React.Component {
     this.changeVideosArray();
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps !== this.props) {
+  componentDidUpdate(prevProps, prevState) {
+    // console.log(this.state);
+    if (
+      prevProps !== this.props ||
+      prevState.newCommentsReceived !== this.state.newCommentsReceived
+    ) {
       this.getVideoData(this.props.id);
       this.changeVideosArray();
     }
@@ -67,12 +75,12 @@ export default class MainContent extends React.Component {
       name: "User",
       comment: submit.target.text.value
     };
+    submit.target.reset();
     Axios.post(
       `${url}/videos/${this.props.id}/comments?api_key=${apiKey}`,
       newComment
-    ).then(res => {
-      console.log(res.data);
-      this.setState({ change: "yes" });
+    ).then(() => {
+      this.setState({ newCommentsReceived: !this.state.change });
     });
   };
 }

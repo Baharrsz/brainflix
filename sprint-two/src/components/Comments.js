@@ -6,7 +6,7 @@ var uniqid = require("uniqid");
 
 function NewComment() {
   return (
-    <div className="comments__new">
+    <form className="comments__new">
       <img
         className="comments__new-avatar avatar"
         alt="avatar"
@@ -16,9 +16,10 @@ function NewComment() {
       <textarea
         className="comments__new-input input"
         placeholder="Write your comment here"
+        name="text"
       ></textarea>
       <button className="comments__new-btn btn">COMMENT</button>
-    </div>
+    </form>
   );
 }
 

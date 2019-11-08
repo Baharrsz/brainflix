@@ -15,7 +15,8 @@ export default class MainContent extends React.Component {
   };
 
   render() {
-    if (this.state.mainVideo) {
+    if (!this.state.mainVideo) return <></>;
+    else {
       let { sideArray, mainVideo } = this.state;
       return (
         <main className="main">
@@ -25,7 +26,7 @@ export default class MainContent extends React.Component {
           <Side videosArray={sideArray} />
         </main>
       );
-    } else return <></>;
+    }
   }
 
   getVideoData(id) {
@@ -37,11 +38,10 @@ export default class MainContent extends React.Component {
   }
 
   changeVideosArray() {
-    let id = this.props.id;
     let sideArray = this.state.sideArray;
     let mainVideo = this.state.mainVideo;
     let match = sideArray.findIndex(video => {
-      return video.id === id;
+      return video.id === this.props.id;
     });
     sideArray.splice(match, 1);
     if (mainVideo) {
@@ -67,4 +67,15 @@ export default class MainContent extends React.Component {
       this.changeVideosArray();
     }
   }
+
+  // postNewComment(submit) {
+  //   let newComment = {
+  //     name: "User",
+  //     comment: submit.target.text.value
+  //   };
+  //   Axios.post(
+  //     `${url}/videos/${this.props.id}/comments?api_key=${apiKey}`,
+  //     newComment
+  //   ).then(this.setState({ change: "yes" }));
+  // }
 }

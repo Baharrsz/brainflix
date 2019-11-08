@@ -11,7 +11,8 @@ let url = "https://project-2-api.herokuapp.com";
 export default class MainContent extends React.Component {
   state = {
     sideArray: this.props.sideArray,
-    mainVideo: undefined
+    mainVideo: undefined,
+    removedVideo: undefined
   };
 
   render() {
@@ -39,21 +40,11 @@ export default class MainContent extends React.Component {
 
   changeVideosArray() {
     let sideArray = this.state.sideArray;
-    let mainVideo = this.state.mainVideo;
     let match = sideArray.findIndex(video => {
-      return video.id === this.props.id;
+      return (!video || video.id) === this.props.id;
     });
-    sideArray.splice(match, 1);
-    if (mainVideo) {
-      let currentVideo = {
-        id: mainVideo.id,
-        channel: mainVideo.channel,
-        image: mainVideo.image,
-        title: mainVideo.title
-      };
-      sideArray.push(currentVideo);
-    }
-    this.setState({ sideArray: sideArray });
+    let removedVideo = sideArray.splice(match, 1, this.state.removedVideo);
+    this.setState({ sideArray: sideArray, removedVideo: removedVideo[0] });
   }
 
   componentDidMount() {

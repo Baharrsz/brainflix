@@ -4,9 +4,15 @@ import naturalDate from "./naturalDate";
 
 var uniqid = require("uniqid");
 
-function NewComment() {
+function NewComment(props) {
   return (
-    <form className="comments__new">
+    <form
+      onSubmit={submit => {
+        submit.preventDefault();
+        props.postComments(submit);
+      }}
+      className="comments__new"
+    >
       <img
         className="comments__new-avatar avatar"
         alt="avatar"
@@ -54,7 +60,7 @@ function Comments(props) {
   return (
     <div className="comments">
       <h2 className="comments__count">3 comments</h2>
-      <NewComment />
+      <NewComment postComments={props.postComments} />
       <PastComments commentsArray={props.commentsArray} />
     </div>
   );

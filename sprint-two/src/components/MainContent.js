@@ -23,7 +23,10 @@ export default class MainContent extends React.Component {
         <main className="main">
           <Video src={mainVideo.video} poster={mainVideo.image} />
           <Description info={mainVideo} />
-          <Comments commentsArray={mainVideo.comments} />
+          <Comments
+            commentsArray={mainVideo.comments}
+            postComments={this.postNewComment}
+          />
           <Side videosArray={sideArray} />
         </main>
       );
@@ -43,8 +46,8 @@ export default class MainContent extends React.Component {
     let match = sideArray.findIndex(video => {
       return (!video || video.id) === this.props.id;
     });
-    let removedVideo = sideArray.splice(match, 1, this.state.removedVideo);
-    this.setState({ sideArray: sideArray, removedVideo: removedVideo[0] });
+    let [removedVideo] = sideArray.splice(match, 1, this.state.removedVideo);
+    this.setState({ sideArray: sideArray, removedVideo: removedVideo });
   }
 
   componentDidMount() {
@@ -59,14 +62,17 @@ export default class MainContent extends React.Component {
     }
   }
 
-  // postNewComment(submit) {
-  //   let newComment = {
-  //     name: "User",
-  //     comment: submit.target.text.value
-  //   };
-  //   Axios.post(
-  //     `${url}/videos/${this.props.id}/comments?api_key=${apiKey}`,
-  //     newComment
-  //   ).then(this.setState({ change: "yes" }));
-  // }
+  postNewComment = submit => {
+    let newComment = {
+      name: "User",
+      comment: submit.target.text.value
+    };
+    Axios.post(
+      `${url}/videos/${this.props.id}/comments?api_key=${apiKey}`,
+      newComment
+    ).then(res => {
+      console.log(res.data);
+      this.setState({ change: "yes" });
+    });
+  };
 }

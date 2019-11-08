@@ -13,7 +13,7 @@ export default class MainContent extends React.Component {
     sideArray: this.props.sideArray,
     mainVideo: undefined,
     removedVideo: undefined,
-    newCommentsReceived: false
+    newCommentsIn: false
   };
 
   render() {
@@ -60,10 +60,9 @@ export default class MainContent extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    // console.log(this.state);
     if (
       prevProps !== this.props ||
-      prevState.newCommentsReceived !== this.state.newCommentsReceived
+      prevState.newCommentsIn !== this.state.newCommentsIn
     ) {
       this.getVideoData(this.props.id);
       this.changeVideosArray();
@@ -80,7 +79,7 @@ export default class MainContent extends React.Component {
       `${url}/videos/${this.props.id}/comments?api_key=${apiKey}`,
       newComment
     ).then(() => {
-      this.setState({ newCommentsReceived: !this.state.change });
+      this.setState({ newCommentsIn: !this.state.newCommentsIn });
     });
   };
 }

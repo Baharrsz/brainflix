@@ -1,4 +1,6 @@
 .side {
+  border-top: 1px solid $mercury;
+
   padding-top: 40px;
 
   &__list {
@@ -19,20 +21,28 @@
 
       &-poster {
         grid-area: p;
-        width: 120px;
-        height: 70px;
-        border-radius: 4px;
+        &-img {
+          width: 120px;
+          height: 70px;
+          border-radius: 4px;
+        }
       }
 
       &-title {
         grid-area: t;
-        font-family: "AvenirDemiBold";
-        flex-wrap: wrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
+        text-decoration: none;
+        color: black;
+
+        &-text {
+          line-height: 18px;
+          font-family: "AvenirDemiBold";
+          flex-wrap: wrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+        }
       }
 
       &-channel {
@@ -48,7 +58,6 @@
       &-item {
         &-title {
           width: 30vw;
-          line-height: 18px;
         }
       }
     }

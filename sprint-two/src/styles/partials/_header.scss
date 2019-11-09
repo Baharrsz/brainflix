@@ -29,8 +29,11 @@
   }
 
   &__btn {
-    width: 70vw;
     grid-area: b;
+  }
+
+  &__btn-btn {
+    width: 70vw;
     background-image: url(../assets/icons/SVG/Icon-upload.svg);
     background-repeat: no-repeat;
     background-position: 20vw 17px;
@@ -46,38 +49,23 @@
 @include medium {
   .header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
 
     &__logo {
-      margin-right: 22vw;
+      flex-grow: 1;
     }
 
     &__input {
-      width: 36vw;
+      box-sizing: border-box;
+      width: 252px;
       margin-right: 24px;
     }
-    &__btn {
-      width: 16vw;
-      background-position: 1vw 17px;
-      padding-right: 2vw;
+    &__btn-btn {
+      width: 103px;
+      background-position: 8px 17px;
+      padding-right: 10px;
       margin-right: 24px;
-    }
-  }
-}
-
-@include large {
-  .header {
-    &__logo {
-      margin-right: 35.35vw;
-    }
-
-    &__input {
-      width: 36vw;
-    }
-    &__btn {
-      width: 16vw;
-      background-position: 1vw 17px;
-      padding-right: 1vw;
     }
   }
 }

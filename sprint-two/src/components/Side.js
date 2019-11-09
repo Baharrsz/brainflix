@@ -8,13 +8,15 @@ function NextVideo(props) {
   else {
     return (
       <div className="side__list-item">
-        <Link to={`/${info.id}`}>
+        <Link to={`/${info.id}`} className="side__list-item-poster">
           <img
-            className="side__list-item-poster"
+            className="side__list-item-poster-img"
             src={info.image}
             alt="current video"
           ></img>
-          <h4 className="side__list-item-title">{info.title}</h4>
+        </Link>
+        <Link to={`/${info.id}`} className="side__list-item-title">
+          <h4 className="side__list-item-title-text">{info.title}</h4>
         </Link>
         <h4 className="side__list-item-channel">{info.channel}</h4>
       </div>

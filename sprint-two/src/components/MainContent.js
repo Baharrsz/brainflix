@@ -4,9 +4,11 @@ import Description from "./Description";
 import Video from "./Video";
 import Side from "./Side";
 import Axios from "axios";
+import gif from "../assets/video/thinking.gif";
 
-let apiKey = "ee5cb60a-b529-4112-ab42-6392a28f2a85";
+let apiKey = "259ad56b-015b-44d2-83dc-30323a9559d0";
 let url = "https://project-2-api.herokuapp.com";
+const corsUrl = "cors-anywhere.herokuapp.com/";
 
 export default class MainContent extends React.Component {
   state = {
@@ -17,12 +19,21 @@ export default class MainContent extends React.Component {
   };
 
   render() {
-    if (!this.state.mainVideo) return <></>;
+    if (!this.state.mainVideo)
+      return (
+        <div className="loading">
+          <h1 className="loading__title">Loading...</h1>
+          <img className="loading__img" src={gif} alt="Loading GIF"></img>
+        </div>
+      );
     else {
       let { sideArray, mainVideo } = this.state;
       return (
         <main className="main">
-          <Video src={mainVideo.video} poster={mainVideo.image} />
+          <Video
+            src={corsUrl + `${mainVideo.video}`}
+            poster={mainVideo.image}
+          />
           <Description info={mainVideo} />
           <Comments
             commentsArray={mainVideo.comments}

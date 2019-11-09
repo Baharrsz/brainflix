@@ -4,6 +4,7 @@
 
   &__player {
     width: 100%;
+    height: 100%;
   }
 }
 
@@ -90,6 +91,8 @@
   }
 
   .description {
+    border-right: 1px solid $mercury;
+
     &__head-stats {
       margin-right: 2.22vw;
     }

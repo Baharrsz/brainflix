@@ -6,7 +6,8 @@
 @import "./partials/comments";
 @import "./partials/header";
 @import "./partials/main-content";
-@import "./partials/side.scss";
+@import "./partials/side";
+@import "./partials/upload-page";
 
 html,
 body {
@@ -55,6 +56,18 @@ body {
 }
 .side {
   grid-area: s;
+}
+
+.loading {
+  margin: 0 auto;
+
+  &__img {
+    width: 100vw;
+  }
+  &__title {
+    margin: 20px;
+    text-align: center;
+  }
 }
 
 @include medium {

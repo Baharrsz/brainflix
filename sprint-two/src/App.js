@@ -4,8 +4,9 @@ import Header from "./components/Header";
 import MainContent from "./components/MainContent";
 import UploadPage from "./components/UploadPage";
 import Axios from "axios";
+import gif from "./assets/video/thinking.gif";
 
-let apiKey = "ee5cb60a-b529-4112-ab42-6392a28f2a85";
+let apiKey = "259ad56b-015b-44d2-83dc-30323a9559d0";
 let url = "https://project-2-api.herokuapp.com";
 
 class App extends React.Component {
@@ -13,7 +14,12 @@ class App extends React.Component {
 
   render() {
     if (!this.state.sideArray) {
-      return <>Loading...</>;
+      return (
+        <div className="loading">
+          <h1 className="loading__title">Loading...</h1>
+          <img className="loading__img" src={gif} alt="Loading GIF"></img>
+        </div>
+      );
     } else {
       return (
         <>

@@ -33,11 +33,7 @@ function SingleComment(props) {
   let commentInfo = props.commentInfo;
   return (
     <div className="comments__past-comment">
-      <img
-        className="comments__past-comment-avatar avatar"
-        alt="avatar"
-        src={commentInfo.avatar}
-      ></img>
+      <div className="comments__past-comment-avatar avatar"></div>
       <div className="comments__past-comment-name">{commentInfo.name}</div>
       <div className="comments__past-comment-date">
         {naturalDate(commentInfo.timestamp)}
@@ -59,7 +55,7 @@ function PastComments(props) {
 function Comments(props) {
   return (
     <div className="comments">
-      <h2 className="comments__count">3 comments</h2>
+      <h2 className="comments__count">{props.commentsArray.length} comments</h2>
       <NewComment postComments={props.postComments} />
       <PastComments commentsArray={props.commentsArray} />
     </div>

@@ -39,14 +39,22 @@
   }
 
   &__past {
-    & > :last-child {
-      border-bottom: 1px solid $mercury;
+    max-height: 80vh;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: $silver;
+      box-shadow: inset 0 0 5px $white;
+      border-radius: 10px;
     }
 
     &-comment {
       border-top: 1px solid $mercury;
       display: grid;
-      grid-template-columns: 40px 16px 48.75vw 24.37vw;
+      grid-template-columns: 40px 16px 1fr auto;
       grid-template-rows: 32px auto auto;
       grid-template-areas:
         ". . . ."
@@ -80,7 +88,7 @@
 @include medium {
   .comments {
     &__new {
-      grid-template-columns: 48px 24px 57.29vw 16px 160px 40px;
+      grid-template-columns: 48px 24px auto 16px 160px 40px;
       grid-template-rows: auto 72px;
       grid-template-areas:
         ". . t . . ."
@@ -148,14 +156,17 @@
 
 @include large {
   .comments {
+    border-right: 1px solid $mercury;
     &__new {
-      grid-template-columns: 48px 24px 30.28vw 16px 160px 4px;
+      grid-template-columns: 48px 24px auto 16px 160px 28px;
     }
 
     &__past {
+      & > :last-child {
+        border-bottom: 1px solid $mercury;
+        margin-bottom: 24px;
+      }
       &-comment {
-        // grid-template-columns: 40px 16px auto 1fr 40px;
-
         &-text {
           width: 40vw;
         }

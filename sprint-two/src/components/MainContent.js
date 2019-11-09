@@ -29,7 +29,7 @@ export default class MainContent extends React.Component {
     else {
       let { sideArray, mainVideo } = this.state;
       return (
-        <main className="main">
+        <main className="main main--videos-page">
           <Video
             src={corsUrl + `${mainVideo.video}`}
             poster={mainVideo.image}

@@ -1,5 +1,51 @@
 .upload {
+  border-top: 1px solid $mercury;
+  padding: 24px 5vw;
+
+  * {
+    box-sizing: border-box;
+  }
+
   &__heading {
-    font-family: "AvenireBold";
+    font-family: "AvenirBold";
+    margin-bottom: 32px;
+  }
+
+  label {
+    display: block;
+  }
+
+  &__thumbnail {
+    margin-bottom: 32px;
+    &-img {
+      width: 90vw;
+      height: 153px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    &-input {
+      width: 90vw;
+    }
+  }
+
+  &__description {
+    margin-bottom: 32px;
+    &-input {
+      width: 90vw;
+      height: 143px;
+    }
+  }
+
+  &__btn {
+    margin-bottom: 24px;
+    width: 90vw;
+  }
+
+  &__btn--cancel {
+    width: 90vw;
+    font-family: "AvenirBold";
+    color: $blue;
   }
 }

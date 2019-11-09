@@ -36,6 +36,9 @@ body {
 }
 .main {
   grid-area: m;
+}
+
+.main--videos-page {
   display: grid;
   grid-template-columns: 5vw 90vw 5vw;
   grid-template-rows: 57.19vw auto auto auto;
@@ -76,7 +79,7 @@ body {
     grid-template-rows: 80px auto;
   }
 
-  .main {
+  .main--videos-page {
     grid-template-rows: 52.08vw auto auto auto;
   }
 }
@@ -93,7 +96,7 @@ body {
     grid-area: h;
   }
 
-  .main {
+  .main--videos-page {
     grid-area: m;
     grid-template-columns: 12.5vw 49.44vw 24px 23.89vw 12.5vw;
     grid-template-rows: 37.5vw auto auto;

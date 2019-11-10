@@ -12,7 +12,8 @@ const corsUrl = "cors-anywhere.herokuapp.com/";
 
 export default class MainContent extends React.Component {
   state = {
-    sideArray: this.props.sideArray,
+    // id: this.props.id,
+    sideArray: undefined,
     mainVideo: undefined,
     removedVideo: undefined,
     newCommentsIn: false
@@ -45,20 +46,34 @@ export default class MainContent extends React.Component {
     }
   }
 
-  getVideoData(id) {
-    Axios.get(`${url}/videos/${id}?api_key=${apiKey}`).then(response => {
+  getVideosArray() {
+    return Axios.get(`${url}/videos/?api_key=${apiKey}`).then(response => {
+      localStorage.homeVideoId = response.data[0].id;
       this.setState({
-        mainVideo: response.data
+        sideArray: response.data
+        // id: this.props.id || localStorage.homeVideoId
       });
     });
   }
 
-  changeVideosArray() {
-    let sideArray = this.state.sideArray;
-    let match = sideArray.findIndex(video => {
-      return (!video || video.id) === this.props.id;
+  getMainVideo(id) {
+    Axios.get(`${url}/videos/${id}?api_key=${apiKey}`).then(response => {
+      this.setState({
+        mainVideo: response.data
+        // id: id
+      });
     });
-    let [removedVideo] = sideArray.splice(match, 1, this.state.removedVideo);
+  }
+
+  changeVideosArray(id) {
+    let sideArray = this.state.sideArray;
+    if (this.state.removedVideo) sideArray.push(this.state.removedVideo);
+    let match = sideArray.findIndex(video => {
+      return video.id === id;
+    });
+    if (match >= 0) {
+      var [removedVideo] = sideArray.splice(match, 1);
+    }
     this.setState({
       sideArray: sideArray,
       removedVideo: removedVideo
@@ -66,8 +81,11 @@ export default class MainContent extends React.Component {
   }
 
   componentDidMount() {
-    this.getVideoData(this.props.id);
-    this.changeVideosArray();
+    this.getVideosArray().then(() => {
+      let id = this.props.id || localStorage.homeVideoId;
+      this.getMainVideo(id);
+      this.changeVideosArray(id);
+    });
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -75,8 +93,9 @@ export default class MainContent extends React.Component {
       prevProps !== this.props ||
       prevState.newCommentsIn !== this.state.newCommentsIn
     ) {
-      this.getVideoData(this.props.id);
-      this.changeVideosArray();
+      let id = this.props.id || localStorage.homeVideoId;
+      this.changeVideosArray(id);
+      this.getMainVideo(id);
     }
   }
 
@@ -90,7 +109,9 @@ export default class MainContent extends React.Component {
       `${url}/videos/${this.props.id}/comments?api_key=${apiKey}`,
       newComment
     ).then(() => {
-      this.setState({ newCommentsIn: !this.state.newCommentsIn });
+      this.setState({
+        newCommentsIn: !this.state.newCommentsIn
+      });
     });
   };
 }

@@ -4,24 +4,22 @@ var uniqid = require("uniqid");
 
 function NextVideo(props) {
   let info = props.info;
-  if (!info) return <></>;
-  else {
-    return (
-      <div className="side__list-item">
-        <Link to={`/${info.id}`} className="side__list-item-poster">
-          <img
-            className="side__list-item-poster-img"
-            src={info.image}
-            alt="current video"
-          ></img>
-        </Link>
-        <Link to={`/${info.id}`} className="side__list-item-title">
-          <h4 className="side__list-item-title-text">{info.title}</h4>
-        </Link>
-        <h4 className="side__list-item-channel">{info.channel}</h4>
-      </div>
-    );
-  }
+
+  return (
+    <div className="side__list-item">
+      <Link to={`/${info.id}`} className="side__list-item-poster">
+        <img
+          className="side__list-item-poster-img"
+          src={info.image}
+          alt="current video"
+        ></img>
+      </Link>
+      <Link to={`/${info.id}`} className="side__list-item-title">
+        <h4 className="side__list-item-title-text">{info.title}</h4>
+      </Link>
+      <h4 className="side__list-item-channel">{info.channel}</h4>
+    </div>
+  );
 }
 
 function Side(props) {

@@ -25,8 +25,10 @@ export default function UploadPage(props) {
           placeholder="Add a description of your video"
         ></textarea>
       </div>
-      <button className="upload__btn btn">PUBLISH</button>
-      <button className="upload__btn--cancel">CANCEL</button>
+      <div className="upload__btns">
+        <button className="upload__btn btn">PUBLISH</button>
+        <button className="upload__btn--cancel">CANCEL</button>
+      </div>
     </main>
   );
 }

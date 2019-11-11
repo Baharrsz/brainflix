@@ -102,8 +102,9 @@ export default class MainContent extends React.Component {
       comment: submit.target.text.value
     };
     submit.target.reset();
+    let id = this.props.id || localStorage.homeVideoId;
     Axios.post(
-      `${url}/videos/${this.props.id}/comments?api_key=${apiKey}`,
+      `${url}/videos/${id}/comments?api_key=${apiKey}`,
       newComment
     ).then(() => {
       this.setState({

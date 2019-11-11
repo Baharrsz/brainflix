@@ -12,7 +12,6 @@ const corsUrl = "cors-anywhere.herokuapp.com/";
 
 export default class MainContent extends React.Component {
   state = {
-    // id: this.props.id,
     sideArray: undefined,
     mainVideo: undefined,
     removedVideo: undefined,
@@ -51,7 +50,6 @@ export default class MainContent extends React.Component {
       localStorage.homeVideoId = response.data[0].id;
       this.setState({
         sideArray: response.data
-        // id: this.props.id || localStorage.homeVideoId
       });
     });
   }
@@ -60,7 +58,6 @@ export default class MainContent extends React.Component {
     Axios.get(`${url}/videos/${id}?api_key=${apiKey}`).then(response => {
       this.setState({
         mainVideo: response.data
-        // id: id
       });
     });
   }

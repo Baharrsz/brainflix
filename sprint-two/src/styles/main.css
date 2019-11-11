@@ -117,6 +117,7 @@ label {
   border: 1px solid #e1e1e1;
   border-radius: 4px;
   padding: 8px;
+  font-size: 18px;
 }
 
 .input:focus {

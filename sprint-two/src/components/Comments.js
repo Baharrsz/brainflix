@@ -48,7 +48,7 @@ function PastComments(props) {
   let elementsArray = commentsArray.map(comment => {
     return <SingleComment commentInfo={comment} key={uniqid()} />;
   });
-
+  elementsArray.reverse();
   return <div className="comments__past">{elementsArray}</div>;
 }
 

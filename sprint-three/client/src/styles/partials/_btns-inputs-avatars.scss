@@ -1,0 +1,33 @@
+.btn {
+  height: 48px;
+  border-radius: 4px;
+  color: $white;
+  font-family: "AvenirDemiBold";
+  background-color: $blue;
+  border: none;
+  font-size: 15px;
+
+  &:hover {
+    background-color: $darkblue;
+  }
+}
+
+.input {
+  height: 48px;
+  background-color: $alabaster;
+  border: 1px solid $mercury;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 18px;
+  &:focus {
+    border: 1px solid $blue;
+    outline: none;
+  }
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: $silver;
+}

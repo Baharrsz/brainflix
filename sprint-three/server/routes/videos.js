@@ -1,7 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const sideVideos = require("../model/sideVideos.json");
+const sideVideosName = __dirname + "/../model/sideVideos.json";
 const mainVideos = require("../model/mainVideos.json");
+const mainVideosName = __dirname + "/../model/mainVideos.json";
 const uuid = require("uuid/v4");
 const fs = require("fs");
 
@@ -17,7 +19,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  const match = sideVideos.find(video => video.id === req.params.id);
+  const match = mainVideos.find(video => video.id === req.params.id);
   if (match) {
     res.json(match);
   } else {
@@ -32,15 +34,11 @@ router.post("/", (req, res) => {
     id: uuid(),
     title: req.body.title,
     channel: "user",
-    image: __dirname + "../../client/src/assets/images/Upload-video-preview.jpg"
+    image: req.body.image
   };
 
   const mainVideo = {
-    id: sideVideo.id,
-    title: req.body.title,
-    channel: "user",
-    image:
-      __dirname + "../../client/src/assets/images/Upload-video-preview.jpg",
+    ...sideVideo,
     description: req.body.description,
     views: "0",
     likes: "0",
@@ -53,12 +51,33 @@ router.post("/", (req, res) => {
     });
   } else {
     sideVideos.push(sideVideo);
-    let sideVideosName = __dirname + "/../model/videos.json";
     writeJSONFile(sideVideosName, sideVideos);
     mainVideos.push(mainVideo);
-    let mainVideosName = __dirname + "/../model/mainVideos.json";
     writeJSONFile(mainVideosName, mainVideos);
     res.json(mainVideo);
+  }
+});
+
+router.post("/:id/comments", (req, res) => {
+  const match = mainVideos.find(video => video.id === req.params.id);
+  const matchIndex = mainVideos.indexOf(match);
+  if (!match)
+    res
+      .status(400)
+      .json({ errorMessage: `No videos with the id ${req.params.id}` });
+  else if (!req.body.name || !req.body.comment)
+    res.status(400).json({ errorMessage: "Please provide name and comment." });
+  else {
+    let newComment = {
+      name: req.body.name,
+      comment: req.body.comment,
+      id: req.params.id,
+      timestamp: Date.now()
+    };
+    match.comments.push(newComment);
+    mainVideos.splice(matchIndex, 1, match);
+    writeJSONFile(mainVideosName, mainVideos);
+    res.json(newComment);
   }
 });
 

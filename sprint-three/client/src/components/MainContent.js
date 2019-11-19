@@ -6,8 +6,7 @@ import Side from "./Side";
 import Axios from "axios";
 import gif from "../assets/video/thinking.gif";
 
-let apiKey = "259ad56b-015b-44d2-83dc-30323a9559d0";
-let url = "https://project-2-api.herokuapp.com";
+const url = "http://localhost:5000";
 const corsUrl = "cors-anywhere.herokuapp.com/";
 
 export default class MainContent extends React.Component {
@@ -46,7 +45,7 @@ export default class MainContent extends React.Component {
   }
 
   getVideosArray() {
-    return Axios.get(`${url}/videos/?api_key=${apiKey}`).then(response => {
+    return Axios.get(`${url}/videos`).then(response => {
       localStorage.homeVideoId = response.data[0].id;
       this.setState({
         sideArray: response.data
@@ -55,7 +54,7 @@ export default class MainContent extends React.Component {
   }
 
   getMainVideo(id) {
-    Axios.get(`${url}/videos/${id}?api_key=${apiKey}`).then(response => {
+    Axios.get(`${url}/videos/${id}`).then(response => {
       this.setState({
         mainVideo: response.data
       });
@@ -103,10 +102,8 @@ export default class MainContent extends React.Component {
     };
     submit.target.reset();
     let id = this.props.id || localStorage.homeVideoId;
-    Axios.post(
-      `${url}/videos/${id}/comments?api_key=${apiKey}`,
-      newComment
-    ).then(() => {
+    Axios.post(`${url}/videos/${id}/comments`, newComment).then(res => {
+      console.log(res.data);
       this.setState({
         newCommentsIn: !this.state.newCommentsIn
       });

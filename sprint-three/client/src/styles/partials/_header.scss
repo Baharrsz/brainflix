@@ -30,15 +30,14 @@
 
   &__btn {
     grid-area: b;
-  }
 
-  &__btn-btn {
-    width: 70vw;
-    background-image: url(../assets/icons/SVG/Icon-upload.svg);
-    background-repeat: no-repeat;
-    background-position: 20vw 17px;
-    text-align: right;
-    padding-right: 20vw;
+    &-btn {
+      width: 70vw;
+      background-image: url(../assets/icons/SVG/Icon-upload.svg);
+      background-repeat: no-repeat;
+      background-position: 30% center;
+      // text-align: center;
+    }
   }
 
   &__avatar {
@@ -63,9 +62,8 @@
     }
     &__btn-btn {
       width: 103px;
-      background-position: 8px 17px;
-      padding-right: 10px;
       margin-right: 24px;
+      background-position-x: 8%;
     }
   }
 }

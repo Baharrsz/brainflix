@@ -31,6 +31,7 @@ function NewComment(props) {
 
 function SingleComment(props) {
   let commentInfo = props.commentInfo;
+  console.log("singlecomment", commentInfo);
   return (
     <div className="comments__past-comment">
       <div className="comments__past-comment-avatar avatar"></div>

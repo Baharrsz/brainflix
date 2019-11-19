@@ -313,31 +313,5 @@
         "timestamp": 1542262984046
       }
     ]
-  },
-  {
-    "id": "aab4887c-0534-4b7e-8a0b-bacd3f60d1de",
-    "title": "This is just a title",
-    "channel": "user",
-    "image": "/Users/Bahar/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/BrainStation/Projects/project-4/bahar-raiszadeh-brainflix/sprint-three/server/routes../../client/src/assets/images/Upload-video-preview.jpg",
-    "description": "There's nothing to describe",
-    "views": "0",
-    "likes": "0",
-    "duration": "4:00",
-    "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": 1573882369467,
-    "comments": []
-  },
-  {
-    "id": "f260423b-9047-4e46-bb9f-be2b3ac9f209",
-    "title": "This is just a title",
-    "channel": "user",
-    "image": "/Users/Bahar/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/BrainStation/Projects/project-4/bahar-raiszadeh-brainflix/sprint-three/server/routes../../client/src/assets/images/Upload-video-preview.jpg",
-    "description": "There's nothing to describe",
-    "views": "0",
-    "likes": "0",
-    "duration": "4:00",
-    "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": 1573882551108,
-    "comments": []
   }
 ]
